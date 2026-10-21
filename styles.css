@@ -137,9 +137,14 @@ a { color: inherit; text-decoration: none; }
   justify-content: flex-end;
   margin-top: 32px;
 }
+.hero__intro p { margin: 0; }
 .hero__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   text-wrap: pretty;
-  width: 420px;
+  word-break: keep-all; /* break Chinese at phrase boundaries (commas), not mid-word */
+  width: 460px;
   max-width: 100%;
   font-size: 17px;
   line-height: 29px;
