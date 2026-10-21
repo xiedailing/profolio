@@ -241,6 +241,9 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.03em;
 }
 
+.project__name--zh { font-family: var(--font-zh); }
+.project__dot { font-family: var(--font-sans); }
+
 .project__summary { line-height: 31px; }
 
 .capabilities {
