@@ -165,21 +165,6 @@
 .bb-cta .cs-deliverable__link { line-height: 18px; }
 .cs-deliverable__copy .mono { line-height: 17px; }
 
-.bb-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  min-height: 420px;
-  padding: 40px;
-  border: 1px dashed var(--rule);
-  border-radius: 36px;
-  text-align: center;
-}
-.bb-placeholder p { margin: 0; }
-.bb-placeholder__note { font-size: 15px; line-height: 26px; color: var(--grey); }
-
 /* ---------- Reflection ---------- */
 .bb-reflect__head { display: flex; flex-direction: column; gap: 10px; }
 .bb-reflect__head p { margin: 0; }
@@ -201,7 +186,6 @@
   .cs-principles--4 .cs-principle__title { min-height: 0; }
 
   .bb-source { flex-direction: column; }
-  .bb-placeholder { min-height: 0; padding: 32px 24px; border-radius: 28px; }
 }
 
 /* ---------- Mobile ---------- */
