@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TROVA. — UX Case Study | Mia Hsieh</title>
+  <meta name="description" content="TROVA. 智慧旅行規劃整合平台:從使用者研究、問題定義到 AI 行程檢查與優化的 UX/UI 案例研究。">
+  <meta property="og:title" content="TROVA. — UX Case Study | Mia Hsieh">
+  <meta property="og:description" content="From collecting places to building realistic itineraries.">
+  <meta property="og:type" content="article">
+  <meta name="theme-color" content="#f2f0e9">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case.css">
+</head>
+<body class="cs-page">
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="site-header__row">
+        <a class="wordmark" href="index.html">MIA HSIEH.</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#work">WORK</a>
+          <a href="index.html#contact">CONTACT</a>
+        </nav>
+      </div>
+      <hr class="rule">
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Section 01 / Project overview -->
+    <section class="cs-section cs-section--overview">
+      <div class="wrap cs-stack">
+
+        <div class="cs-hero">
+          <a class="cs-back mono mono--12" href="index.html#work">← BACK TO WORK</a>
+
+          <div class="cs-eyebrow mono mono--11">
+            <p class="cs-eyebrow__project">PROJECT 001 / UX CASE STUDY</p>
+            <p class="cs-eyebrow__category">AI TRAVEL PLANNING PLATFORM</p>
+            <p class="cs-eyebrow__index">[ 01 ]</p>
+          </div>
+          <hr class="rule cs-hero__rule">
+
+          <h1 class="cs-title">TROVA.</h1>
+
+          <div class="cs-hero__body">
+            <div class="cs-hero__left">
+              <div class="cs-statement">
+                <p class="cs-lead">From collecting places to building realistic itineraries.</p>
+                <p lang="zh-Hant" class="zh cs-zh-15">透過 AI 協助檢查旅行行程的合理性，並提供優化建議，讓旅程規劃更順暢。</p>
+              </div>
+              <dl class="cs-meta mono">
+                <div><dt>YEAR</dt><dd>2026</dd></div>
+                <div><dt>CATEGORY</dt><dd>UX/UI Design</dd></div>
+                <div><dt>TYPE</dt><dd>Independent Project</dd></div>
+              </dl>
+            </div>
+
+            <figure class="cs-hero__photo">
+              <img src="assets/trova/kyoto-street.png" width="2400" height="1603" decoding="async"
+                   alt="京都老街街景,石板路兩側是傳統木造建築">
+              <figcaption class="mono mono--11">PHOTO: SATOSHI HIRAYAMA / PEXELS</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <div class="cs-split cs-split--role">
+          <div class="cs-role">
+            <p class="mono mono--11">MY ROLE &amp; CONTRIBUTION</p>
+            <p class="cs-role__title">Independent UI/UX Designer &amp; Front-end Developer</p>
+          </div>
+          <div lang="zh-Hant" class="zh cs-zh-17 cs-paras">
+            <p>獨立完成 TROVA 從使用者研究、問題定義到 UI/UX 設計與前端實作的完整流程。</p>
+            <p>透過使用者訪談與需求分析，梳理旅程規劃中的核心痛點，並將研究洞察轉化為產品設計方向，完成資訊架構、User Flow、Wireframe、UI Design 與 Figma Prototype。</p>
+            <p>此外，獨立設計並開發 TROVA Landing Page，將產品概念轉化為可公開瀏覽的網站。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 02 / Problem & research -->
+    <section class="cs-section cs-section--tint">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">01 / THE PROBLEM</p>
+        <h2 class="cs-h2">Finding places is easy. Making them fit is harder.</h2>
+
+        <div class="cs-split cs-split--role">
+          <p class="mono mono--11">THE PLANNING GAP</p>
+          <p lang="zh-Hant" class="zh cs-zh-17">旅遊規劃不只是收集感興趣的景點，還需要考慮時間、交通距離、預算與行程順序。當安排不符合實際條件時，使用者往往需要反覆調整，增加規劃負擔。</p>
+        </div>
+
+        <hr class="rule">
+
+        <p class="mono mono--11">02 / USER RESEARCH</p>
+
+        <div class="cs-research">
+          <div class="cs-approach">
+            <p class="mono mono--11 muted-grey">RESEARCH APPROACH</p>
+            <ul lang="zh-Hant" class="zh cs-methods">
+              <li>Screener</li>
+              <li>User Interviews / 使用者訪談</li>
+              <li>Insight Synthesis / 訪談洞察整理</li>
+            </ul>
+          </div>
+
+          <div class="cs-finding">
+            <hr class="rule cs-finding__rule">
+            <p class="mono mono--11">KEY RESEARCH FINDING</p>
+            <h3 class="cs-h3">The challenge begins after saving.</h3>
+            <div class="cs-split cs-split--role cs-finding__conclusion">
+              <p class="mono mono--11">WHAT DID I DISCOVER?</p>
+              <p lang="zh-Hant" class="zh cs-zh-20">真正困難的不是找到想去的景點，<br class="br-wide">而是把分散的收藏整理成順路、合理且可執行的每日行程。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-insights">
+          <div class="cs-insights__head mono mono--11">
+            <p>RESEARCH / KEY FINDINGS</p>
+            <p class="muted-grey">01 — 02</p>
+          </div>
+          <hr class="cs-insights__rule">
+          <div class="cs-insights__list">
+            <article class="cs-insight">
+              <p class="cs-insight__num">01.</p>
+              <div class="cs-insight__text">
+                <h3 class="cs-insight__title">Fragmented Information</h3>
+                <p lang="zh-Hant" class="zh cs-zh-15-26">收藏散落不同平台，進入規劃階段後仍需重新整理資訊。</p>
+                <p class="mono mono--11 muted-grey cs-insight__meta">COLLECTION → ORGANIZATION</p>
+              </div>
+            </article>
+            <hr class="cs-insights__vrule">
+            <article class="cs-insight">
+              <p class="cs-insight__num">02.</p>
+              <div class="cs-insight__text">
+                <h3 class="cs-insight__title">Planning Complexity</h3>
+                <p lang="zh-Hant" class="zh cs-zh-15-26">景點找齊後，仍需反覆評估交通、距離與時間，才能排出可執行的行程。</p>
+                <p class="mono mono--11 muted-grey cs-insight__meta">PLANNING → FEASIBILITY</p>
+              </div>
+            </article>
+          </div>
+          <hr class="cs-insights__rule">
+          <div class="cs-takeaway">
+            <p class="mono mono--11">KEY TAKEAWAY</p>
+            <p lang="zh-Hant" class="zh cs-takeaway__text">設計機會不只是整合收藏資訊，更是協助使用者評估行程的可行性。</p>
+          </div>
+        </div>
+
+        <div class="cs-implication">
+          <p class="mono mono--11">DESIGN IMPLICATION / FROM INSIGHT TO DIRECTION</p>
+          <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-800">因此，我將設計重點放在降低行程規劃中的整理與判斷負擔，探索如何透過整合流程與 AI 輔助，<br class="br-wide">協助使用者建立更合理、可執行的旅程。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 03 / Design direction -->
+    <section class="cs-section">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">03 / DESIGN DIRECTION</p>
+        <h2 class="cs-h2">From planning flexibility to smarter itinerary decisions.</h2>
+
+        <div lang="zh-Hant" class="zh cs-zh-17 cs-paras cs-measure-900">
+          <p>在初期研究中，我注意到使用者放棄景點不一定代表失去興趣，因此曾探索以候補機制保留旅行選擇的可能性。</p>
+          <p>隨著問題定義逐漸明確，我將設計重心收斂至行程合理性檢查與 AI 優化建議，協助使用者在規劃階段更早發現問題，並評估更合適的安排方式。</p>
+        </div>
+
+        <div class="cs-directions">
+          <article class="cs-direction">
+            <p class="mono mono--11">EARLY EXPLORATION</p>
+            <p lang="zh-Hant" class="zh cs-direction__title">保留旅行選擇</p>
+            <p lang="zh-Hant" class="zh cs-zh-17">候補機制僅作為初期探索，未納入最終 Prototype。</p>
+          </article>
+          <article class="cs-direction">
+            <p class="mono mono--11">FINAL DIRECTION</p>
+            <p lang="zh-Hant" class="zh cs-direction__title">支援行程判斷</p>
+            <p lang="zh-Hant" class="zh cs-zh-17">AI 行程檢查與優化／目前 Prototype 的核心。</p>
+          </article>
+        </div>
+
+        <p class="mono mono--11">DESIGN PRINCIPLES / 設計原則</p>
+
+        <div class="cs-principles">
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">01</p>
+            <h3 class="cs-principle__title">Identify Problems</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">協助使用者發現潛在規劃問題</p>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">02</p>
+            <h3 class="cs-principle__title">Explain Suggestions</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">讓調整建議容易理解</p>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">03</p>
+            <h3 class="cs-principle__title">Support Decisions</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">協助使用者判斷是否調整行程</p>
+          </article>
+        </div>
+
+        <p lang="zh-Hant" class="zh cs-note-14 cs-measure-800">以上為設計原則，不代表 Prototype 已完成所有相關互動；目前尚未據此宣稱使用成效。</p>
+      </div>
+    </section>
+
+    <!-- Section 04 / Core solution -->
+    <section class="cs-section cs-section--tint">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">04 / CORE SOLUTION</p>
+        <h2 class="cs-h2">Making complex travel plans easier to review.</h2>
+        <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-800">以既有行程為起點，先辨識安排中的潛在問題，再透過具體建議重新評估行程。以下皆使用專題原始 Figma 畫面，展示目前已設計的互動情境。</p>
+
+        <hr class="rule">
+
+        <!-- Stage A -->
+        <div class="cs-stage">
+          <figure class="cs-stage__ui">
+            <p class="mono mono--11 cs-stage__label">A / ORIGINAL ITINERARY</p>
+            <div class="cs-phone">
+              <img src="assets/trova/mockup-a-original.png" width="786" height="1704" loading="lazy" decoding="async"
+                   alt="TROVA. 京都 Day 2 行程畫面,依序列出景點、抵達時間與交通方式">
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label">SOURCE / P14 · 京都 Day 2 行程</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">A / ORIGINAL ITINERARY</p>
+            <h3 class="cs-stage__title">Original Itinerary</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">使用者先檢視已安排的每日行程，確認景點順序、時間與交通資訊，作為後續檢查與調整的起點。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：Day 2 行程依序列出景點、抵達時間、停留時間與景點之間的交通方式。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- Stage B -->
+        <div class="cs-stage cs-stage--rev">
+          <figure class="cs-stage__ui">
+            <p class="mono mono--11 cs-stage__label">B / AI REVIEW</p>
+
+            <div class="cs-zoom">
+              <div class="cs-zoom__inner">
+                <div class="cs-zoom__phone">
+                  <div class="cs-phone cs-phone--b">
+                    <img src="assets/trova/mockup-b-ai-review.png" width="786" height="1704" loading="lazy" decoding="async"
+                         alt="TROVA. AI 提醒展開後的行程畫面">
+                  </div>
+                  <span class="cs-zoom__highlight" aria-hidden="true"></span>
+                </div>
+                <img class="cs-zoom__leader" src="assets/trova/leader-lines.svg" width="56.34" height="143.79" alt="" aria-hidden="true">
+                <p class="mono mono--11 cs-zoom__label">DETAIL / AI 提醒與展開建議</p>
+
+                <div lang="zh-Hant" class="cs-aicard" role="img" aria-label="AI 提醒卡片:交通時間可能來不及,可選擇清水寺順延至 10:20 或維持原安排">
+                  <div class="cs-aicard__head">
+                    <span class="cs-aicard__icon"><img src="assets/trova/icon-car.svg" width="18" height="18" alt=""></span>
+                    <div class="cs-aicard__copy">
+                      <p class="cs-aicard__title">AI 提醒：交通時間可能來不及</p>
+                      <p class="cs-aicard__body">八坂神社 09:30 開始，停留約 30 分鐘後約 10:00 結束，交通約 20 分鐘，實際可能 10:20 才到清水寺，比排定的 10:00 晚。</p>
+                    </div>
+                  </div>
+                  <hr class="cs-aicard__rule">
+                  <div class="cs-aicard__actions">
+                    <span class="cs-aicard__secondary">維持原安排</span>
+                    <span class="cs-aicard__primary">清水寺順延至 10:20</span>
+                  </div>
+                </div>
+
+                <p class="mono mono--11 cs-zoom__caption">原始 UI 局部放大（P14-C2）</p>
+              </div>
+            </div>
+
+            <figcaption class="mono mono--11 cs-stage__label">SOURCE / P14-C2 · 展開建議</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">B / AI REVIEW</p>
+            <h3 class="cs-stage__title">AI Review</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">當行程出現潛在的交通或時間衝突時，系統提供提醒與具體建議，協助使用者理解問題並評估調整方式。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：提醒說明前一站的結束時間與交通時間，並提供「清水寺順延至 10:20」與「維持原安排」兩個選項。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- Stage C -->
+        <div class="cs-stage">
+          <figure class="cs-stage__ui cs-stage__ui--tint">
+            <p class="mono mono--11 cs-stage__label">C / AI OPTIMIZATION</p>
+            <div class="cs-iphone">
+              <span class="cs-iphone__btn cs-iphone__btn--l1"></span>
+              <span class="cs-iphone__btn cs-iphone__btn--l2"></span>
+              <span class="cs-iphone__btn cs-iphone__btn--l3"></span>
+              <span class="cs-iphone__btn cs-iphone__btn--r1"></span>
+              <div class="cs-iphone__body"></div>
+              <div class="cs-iphone__screen">
+                <img src="assets/trova/mockup-c-ai-optimization.png" width="786" height="1704" loading="lazy" decoding="async"
+                     alt="TROVA. AI 建議順序畫面,可切換檢視 AI 建議順序與原始規劃">
+              </div>
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label">SOURCE / P17 · 京都 AI 建議順序</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">C / AI OPTIMIZATION</p>
+            <h3 class="cs-stage__title cs-stage__title--lg">AI Optimization</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">透過 AI 建議的景點安排順序，使用者可以檢視原始規劃與建議結果，重新評估行程動線與安排。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：可在「AI 建議順序」與「原始規劃」之間切換檢視，並選擇「採用建議」或「按原始規劃」。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- Stage D -->
+        <div class="cs-stage cs-stage--rev">
+          <figure class="cs-stage__ui">
+            <p class="mono mono--11 cs-stage__label">D / OPTIMIZED RESULT</p>
+            <div class="cs-phone">
+              <img src="assets/trova/mockup-d-result.png" width="786" height="1704" loading="lazy" decoding="async"
+                   alt="TROVA. 套用新順序後的行程畫面,顯示已套用提示與復原操作">
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label">SOURCE / P18 · 京都行程優化完成</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">D / OPTIMIZED RESULT</p>
+            <h3 class="cs-stage__title">Optimized Result</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">完成調整後，使用者可以檢視優化後的行程，確認新的景點順序與安排內容。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：套用後顯示「已套用新順序」提示，並提供「復原」操作。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05 / Final deliverables -->
+    <section class="cs-section">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">05 / FINAL DELIVERABLES</p>
+        <h2 class="cs-h2">Explore the experience.</h2>
+        <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-940">TROVA 已完成 AI 行程檢查與優化的互動原型，並製作可公開瀏覽的 Landing Page，分別展示產品操作體驗與產品概念。</p>
+
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__copy">
+            <h3 class="cs-h3-sm">Interactive Prototype</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">透過 Figma Prototype 展示行程檢查、問題提示與 AI 優化建議的互動流程。</p>
+          </div>
+          <a class="cs-deliverable__link mono mono--12" href="https://www.figma.com/proto/zibVaGD0nePHsRTbO8X9bo/%E6%99%BA%E6%85%A7%E6%97%85%E8%A1%8C%E8%A6%8F%E5%8A%83%E6%95%B4%E5%90%88%E5%B9%B3%E5%8F%B0%E5%B0%88%E6%A1%88_Wireframe?node-id=1468-12139&amp;viewport=-4243%2C-616%2C0.16&amp;t=ZiLidn8mGRznzPIZ-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=1468%3A12139&amp;show-proto-sidebar=1&amp;page-id=1446%3A8995" target="_blank" rel="noopener noreferrer">VIEW PROTOTYPE ↗</a>
+        </div>
+
+        <hr class="rule">
+
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__copy">
+            <h3 class="cs-h3-sm">TROVA Landing Page</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">獨立設計並開發的產品介紹網站，呈現 TROVA 的產品定位與核心功能。</p>
+          </div>
+          <a class="cs-deliverable__link mono mono--12" href="https://xiedailing.github.io/Travel-AI/trova_landing_page/" target="_blank" rel="noopener noreferrer">VISIT LANDING PAGE ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06 / Reflection -->
+    <section class="cs-section cs-section--tint">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">06 / REFLECTION</p>
+        <h2 class="cs-h2">What I’ve learned.</h2>
+        <hr class="rule">
+
+        <div class="cs-split cs-split--reflect">
+          <h3 class="cs-reflect__title">Research-driven Thinking</h3>
+          <p lang="zh-Hant" class="zh cs-zh-17">研究讓我重新理解旅行規劃的問題，除了探索景點，更需要協助使用者衡量現實條件。</p>
+        </div>
+        <hr class="rule">
+        <div class="cs-split cs-split--reflect">
+          <h3 class="cs-reflect__title">Designing with AI</h3>
+          <p lang="zh-Hant" class="zh cs-zh-17">AI 的價值不只是提供答案，也在於協助使用者理解行程中的問題，進一步做出判斷。</p>
+        </div>
+        <hr class="rule">
+        <div class="cs-split cs-split--reflect">
+          <h3 class="cs-reflect__title">Next Steps</h3>
+          <p lang="zh-Hant" class="zh cs-zh-17">未來希望透過易用性測試，確認使用者能否理解 AI 的問題提示、優化理由，以及是否能順利完成行程調整。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next project -->
+    <section class="cs-section cs-next">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">NEXT PROJECT / HOME RESTOCK ↗</p>
+        <p class="cs-next__title">補補 Bubu.</p>
+        <p lang="zh-Hant" class="zh cs-zh-17">居家消耗品補貨 App</p>
+        <p class="mono mono--11">CASE STUDY / COMING NEXT</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <p class="mono mono--11 contact__label">07 / CONTACT</p>
+      <div class="contact__main">
+        <p class="contact__headline">Let's connect.</p>
+        <ul class="contact__links">
+          <li><a class="mono mono--13" href="mailto:xiedailing0324@gmail.com">EMAIL ↗</a></li>
+          <li><a class="mono mono--13" href="https://github.com/xiedailing" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></li>
+          <li><span class="mono mono--12 contact__pending">RESUME / COMING SOON</span></li>
+        </ul>
+      </div>
+      <hr class="rule rule--strong">
+      <div class="contact__meta mono mono--10">
+        <p>© 2026 MIA HSIEH</p>
+        <p class="contact__meta-note">PERSONAL PORTFOLIO / UI &amp; UX DESIGN</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

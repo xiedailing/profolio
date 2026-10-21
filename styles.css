@@ -14,7 +14,7 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-zh: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 
-  --gutter: clamp(20px, 5.556vw, 80px);
+  --gutter: clamp(24px, 5.556vw, 80px);
   --content-max: 1280px;
 }
 
@@ -356,5 +356,10 @@ a { color: inherit; text-decoration: none; }
   .work { padding-block: 24px 72px; }
   .work > .wrap { gap: 40px; }
 
-  .contact__meta { flex-direction: column; gap: 8px; }
+  .contact { padding-block: 56px 24px; }
+  .contact > .wrap { gap: 32px; }
+  .contact__main { gap: 28px; }
+  .contact__label { display: none; }
+  .contact__headline { font-size: 46px; line-height: 54px; }
+  .contact__meta { flex-direction: column; gap: 12px; }
 }

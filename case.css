@@ -1,0 +1,558 @@
+/* Case study page — builds on styles.css tokens.
+   Desktop values come from "TROVA / Case Study / Desktop / 1440",
+   mobile values from "TROVA / Case Study / Mobile / 390". */
+
+:root {
+  --cs-py: clamp(64px, 7.222vw, 104px);
+  --cs-gap: clamp(32px, 3.333vw, 48px);
+  --grey: #747770;
+  --rule-soft: #b6b5ad;
+  --ai-100: #eef0fb;
+  --ai-500: #4a5fc7;
+  --ai-700: #3245a4;
+}
+
+/* Case study mono labels are untracked in the design (home page labels are tracked). */
+.cs-page main [class*="mono--"] { letter-spacing: 0; line-height: 17px; }
+.muted-grey { color: var(--grey); }
+
+/* ---------- Layout primitives ---------- */
+.cs-section { padding-block: var(--cs-py); }
+.cs-section--overview { padding-top: clamp(32px, 3.333vw, 48px); }
+.cs-section--tint { background: var(--surface); }
+
+.cs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-gap);
+}
+
+.cs-measure-800 { max-width: 800px; }
+.cs-measure-900 { max-width: 900px; }
+.cs-measure-940 { max-width: 940px; }
+
+/* ---------- Type ---------- */
+.cs-zh-15    { font-size: 15px; line-height: 27px; }
+.cs-zh-15-26 { font-size: 15px; line-height: 26px; }
+.cs-zh-17    { font-size: clamp(16px, 1.18vw, 17px); line-height: 1.82; }
+.cs-zh-20    { font-size: clamp(18px, 1.389vw, 20px); line-height: 1.7; }
+.cs-note-14  { font-size: 14px; line-height: 24px; }
+.cs-note-14-25 { font-size: 14px; line-height: 25px; }
+
+.cs-h2 {
+  max-width: 950px;
+  font-weight: 500;
+  font-size: clamp(34px, 3.889vw, 56px);
+  line-height: 1.09;
+  letter-spacing: -0.03em;
+}
+.cs-h3 {
+  font-weight: 500;
+  font-size: clamp(34px, 3.333vw, 48px);
+  line-height: 1.125;
+  letter-spacing: -0.03em;
+}
+.cs-h3-sm {
+  font-weight: 500;
+  font-size: clamp(26px, 2.222vw, 32px);
+  line-height: 1.125;
+  letter-spacing: -0.03em;
+}
+
+.cs-paras p { margin: 0 0 8px; }
+.cs-paras p:last-child { margin-bottom: 0; }
+
+/* Two-column label | content rows (386.67 + 48 + 736.67) */
+.cs-split {
+  display: grid;
+  grid-template-columns: 386.67fr 736.67fr;
+  column-gap: 48px;
+  align-items: start;
+  max-width: 1171.34px;
+}
+.cs-split--reflect {
+  grid-template-columns: 410.67fr 736.67fr;
+  column-gap: 24px;
+}
+
+/* ---------- 01 Overview ---------- */
+.cs-hero { display: flex; flex-direction: column; }
+
+.cs-back {
+  align-self: flex-start;
+  margin-bottom: 46px;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.25s ease;
+}
+.cs-back:hover { background-size: 100% 1px; }
+
+.cs-eyebrow {
+  display: grid;
+  grid-template-columns: 408px 1fr auto;
+  column-gap: 24px;
+}
+.cs-eyebrow p { margin: 0; }
+.cs-eyebrow__index { color: var(--grey); text-align: right; }
+
+.cs-hero__rule { margin-top: 12px; }
+
+.cs-title {
+  margin: 15px 0 26px -0.028em;
+  font-weight: 500;
+  font-size: clamp(64px, 23.5vw, 288px);
+  line-height: 0.903;
+  letter-spacing: -0.03em;
+}
+
+.cs-hero__body {
+  display: grid;
+  grid-template-columns: 408fr 848fr;
+  column-gap: 24px;
+  padding-bottom: 29px; /* room for the absolutely placed photo credit */
+}
+
+.cs-hero__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+.cs-statement { display: flex; flex-direction: column; gap: 28px; }
+.cs-lead {
+  font-weight: 500;
+  font-size: clamp(26px, 2.222vw, 32px);
+  line-height: 1.19;
+  letter-spacing: -0.03em;
+}
+
+.cs-meta { margin: 0; }
+.cs-meta > div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  padding-block: 13px;
+  border-top: 1px solid var(--rule);
+}
+.cs-meta > div:last-child { border-bottom: 1px solid var(--rule); }
+.cs-meta dt { margin: 0; font-size: 11px; line-height: 17px; color: var(--grey); }
+.cs-meta dd { margin: 0; font-size: 12px; line-height: 17px; text-transform: uppercase; }
+
+.cs-hero__photo { position: relative; margin: 0; }
+.cs-hero__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 848 / 400;
+  object-fit: cover;
+  object-position: 50% 24%;
+}
+.cs-hero__photo figcaption {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  color: var(--grey);
+  white-space: nowrap;
+}
+
+.cs-role { display: flex; flex-direction: column; gap: 12px; padding-right: 0; }
+.cs-role p { margin: 0; }
+.cs-role__title { font-size: 15px; line-height: 24px; }
+
+/* ---------- 02 Problem & research ---------- */
+.cs-split > .mono { margin: 0; }
+
+.cs-research { display: flex; flex-direction: column; gap: 32px; }
+.cs-approach { display: flex; flex-direction: column; gap: 16px; }
+.cs-approach > p { margin: 0; }
+
+.cs-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.cs-finding { display: flex; flex-direction: column; gap: 24px; }
+.cs-finding > p, .cs-finding > h3 { margin: 0; }
+.cs-finding__rule { opacity: 0.35; }
+.cs-finding__conclusion { padding-top: 8px; }
+
+.cs-insights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 320px;
+  padding: 32px;
+  background: var(--bg);
+}
+.cs-insights__head { display: flex; justify-content: space-between; gap: 16px; }
+.cs-insights__head p { margin: 0; }
+.cs-insights__rule,
+.cs-insights__vrule {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--rule-soft);
+}
+.cs-insights__list { display: grid; flex: 1; grid-template-columns: 1fr 1px 1fr; }
+.cs-insights__vrule { width: 1px; height: 100%; }
+.cs-insight { display: flex; gap: 12px; min-width: 0; }
+.cs-insight:first-child { padding-right: 32px; }
+.cs-insight:last-child { padding-left: 32px; }
+.cs-insight__num {
+  flex: none;
+  width: 64px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -0.03em;
+}
+.cs-insight__text { display: flex; flex: 1; flex-direction: column; gap: 8px; min-width: 0; }
+.cs-insight__text > p { margin: 0; }
+.cs-insight__title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.02em;
+}
+.cs-insight__meta { padding-top: 4px; }
+
+.cs-takeaway { display: flex; align-items: center; }
+.cs-takeaway > p { margin: 0; }
+.cs-takeaway .mono { flex: none; width: 232px; }
+.cs-takeaway__text { flex: 1; font-size: 20px; line-height: 32px; }
+
+.cs-implication { display: flex; flex-direction: column; gap: 16px; }
+.cs-implication > p { margin: 0; }
+
+/* ---------- 03 Design direction ---------- */
+.cs-directions { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cs-direction {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--surface);
+}
+.cs-direction > p { margin: 0; }
+.cs-direction__title { font-size: clamp(24px, 2.083vw, 30px); line-height: 1.333; }
+
+.cs-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cs-principle { display: flex; flex-direction: column; gap: 16px; }
+.cs-principle > p, .cs-principle > h3 { margin: 0; }
+.cs-principle__title {
+  font-weight: 500;
+  font-size: clamp(24px, 2.014vw, 29px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- 04 Core solution ---------- */
+.cs-stage {
+  display: grid;
+  grid-template-columns: 736.67fr 519.33fr;
+  gap: 24px;
+  align-items: center;
+}
+.cs-stage--rev { grid-template-columns: 519.33fr 736.67fr; }
+.cs-stage--rev .cs-stage__text { order: -1; }
+
+.cs-stage__ui {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+  margin: 0;
+  padding: 40px;
+  background: var(--bg);
+}
+.cs-stage__ui--tint { background: rgba(195, 196, 190, 0.35); }
+.cs-stage__label { align-self: stretch; margin: 0; }
+
+.cs-stage__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  padding: 40px;
+}
+.cs-stage__text > p, .cs-stage__text > h3 { margin: 0; }
+.cs-stage__title {
+  font-weight: 500;
+  font-size: clamp(28px, 2.778vw, 40px);
+  line-height: 1.125;
+  letter-spacing: -0.03em;
+}
+.cs-stage__title--lg { font-size: clamp(34px, 3.333vw, 48px); }
+
+/* Plain phone mockup (A, D) */
+.cs-phone {
+  position: relative;
+  width: min(320px, 100%);
+  aspect-ratio: 320 / 693.74;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 36px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(32, 33, 31, 0.1);
+}
+.cs-phone img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Stage B: flat UI + detail zoom.
+   Wide panel  -> composition with leader lines (desktop design).
+   Narrow panel -> stacked (mobile design). */
+.cs-zoom { container: zoom / inline-size; width: 100%; }
+.cs-zoom__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(294px, 100%);
+  margin-inline: auto;
+}
+.cs-zoom__inner > p { margin: 0; }
+.cs-zoom__phone { position: relative; width: 100%; aspect-ratio: 272 / 589.68; }
+.cs-phone--b {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 11.76% / 5.43%;
+}
+.cs-zoom__highlight {
+  position: absolute;
+  left: 2.97%;
+  top: 67.1%;
+  width: 94.06%;
+  height: 18.97%;
+  border: 1px solid var(--ink);
+  border-radius: 14px;
+  pointer-events: none;
+}
+.cs-zoom__leader { display: none; }
+.cs-zoom__caption { color: var(--grey); }
+
+.cs-aicard {
+  --u: 0.816px;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 12);
+  width: 100%;
+  padding: calc(var(--u) * 16);
+  background: var(--ai-100);
+  border: calc(var(--u) * 1) solid var(--ai-700);
+  border-radius: calc(var(--u) * 16);
+  font-family: var(--font-zh);
+}
+.cs-aicard__head { display: flex; align-items: center; gap: calc(var(--u) * 10); }
+.cs-aicard__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(var(--u) * 32);
+  height: calc(var(--u) * 32);
+  border-radius: calc(var(--u) * 10);
+  background: var(--ai-100);
+}
+.cs-aicard__icon img { width: calc(var(--u) * 18); height: calc(var(--u) * 18); display: block; }
+.cs-aicard__copy { display: flex; flex: 1; flex-direction: column; gap: calc(var(--u) * 4); min-width: 0; }
+.cs-aicard__copy p { margin: 0; }
+.cs-aicard__title { font-weight: 700; font-size: calc(var(--u) * 15); line-height: calc(var(--u) * 18); color: #2e2a24; }
+.cs-aicard__body { font-weight: 400; font-size: calc(var(--u) * 12); line-height: calc(var(--u) * 14); color: #6b6357; }
+.cs-aicard__rule { height: 1px; margin: 0; border: 0; background: #e0ded9; }
+.cs-aicard__actions { display: flex; align-items: center; justify-content: flex-end; gap: calc(var(--u) * 16); }
+.cs-aicard__secondary { font-size: calc(var(--u) * 13); line-height: calc(var(--u) * 16); color: #6b6357; white-space: nowrap; }
+.cs-aicard__primary {
+  padding: calc(var(--u) * 8) calc(var(--u) * 13);
+  border-radius: calc(var(--u) * 20);
+  background: var(--ai-500);
+  color: #fff;
+  font-weight: 700;
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 16);
+  white-space: nowrap;
+}
+
+/* Composition scales with the panel (design size = 657 x 589.68). Every length below is a
+   share of that box, so it works at any panel width >= 520px. */
+@container zoom (min-width: 520px) {
+  .cs-zoom__inner {
+    container-type: inline-size;
+    position: relative;
+    display: block;
+    width: min(100%, 657px);
+    aspect-ratio: 657 / 589.68;
+  }
+  .cs-zoom__phone { position: absolute; left: 0; top: 0; width: 41.4%; height: 100%; aspect-ratio: auto; }
+  .cs-zoom__leader { display: block; position: absolute; left: 40.15%; top: 64.39%; width: 8.575%; height: 24.38%; }
+  .cs-page .cs-zoom .cs-zoom__label,
+  .cs-page .cs-zoom .cs-zoom__caption {
+    position: absolute;
+    left: 48.71%;
+    font-size: calc(11 * 0.1522cqw);
+    line-height: calc(17 * 0.1522cqw);
+    white-space: nowrap;
+  }
+  .cs-zoom__label { top: 59.73%; }
+  .cs-zoom__caption { top: 90.73%; }
+  .cs-aicard { --u: 0.1522cqw; position: absolute; left: 47.46%; top: 63.64%; width: 54.95%; }
+}
+/* Stage C: iPhone 16 frame (CSS only, scales with its width) */
+.cs-iphone {
+  container-type: inline-size;
+  position: relative;
+  width: min(395.226px, 100%);
+  aspect-ratio: 395.226 / 822.95;
+}
+.cs-iphone__body {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 0.27cqw solid #524b40;
+  border-radius: 16.45cqw;
+  background: linear-gradient(160deg, #f0ebc9 0%, #e7e3bf 45%, #d8d3a8 100%);
+  box-shadow: 0 0 0.5cqw rgba(195, 195, 195, 0.9), inset 0 0 0.8cqw rgba(255, 255, 255, 0.9);
+}
+.cs-iphone__screen {
+  position: absolute;
+  inset: 1.06cqw;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 15.38cqw;
+  background: #fbfaf7;
+}
+.cs-iphone__screen img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.cs-iphone__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 1.4cqw 0.2cqw rgba(135, 145, 148, 0.7);
+  pointer-events: none;
+}
+.cs-iphone__btn {
+  position: absolute;
+  z-index: 0;
+  width: 1.326cqw;
+  background: #f0ece3;
+  box-shadow: inset 0.2cqw 0 0.3cqw rgba(0, 0, 0, 0.35);
+}
+.cs-iphone__btn--l1, .cs-iphone__btn--l2, .cs-iphone__btn--l3 {
+  left: -0.8cqw;
+  border-radius: 0.53cqw 0 0 0.53cqw;
+}
+.cs-iphone__btn--l1 { top: 39.52cqw; height: 8.22cqw; }
+.cs-iphone__btn--l2 { top: 55.43cqw; height: 14.85cqw; }
+.cs-iphone__btn--l3 { top: 74.8cqw; height: 14.85cqw; }
+.cs-iphone__btn--r1 {
+  left: 100.8cqw;
+  top: 92.31cqw;
+  height: 25.46cqw;
+  border-radius: 0 0.53cqw 0.53cqw 0;
+  box-shadow: inset -0.2cqw 0 0.3cqw rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- 05 Deliverables ---------- */
+.cs-deliverable {
+  display: grid;
+  grid-template-columns: 736.67fr 519.33fr;
+  column-gap: 24px;
+  align-items: start;
+}
+.cs-deliverable__copy { display: flex; flex-direction: column; gap: 16px; }
+.cs-deliverable__copy > h3, .cs-deliverable__copy > p { margin: 0; }
+.cs-deliverable__link {
+  justify-self: start;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  transition: opacity 0.2s ease;
+}
+.cs-deliverable__link:hover { opacity: 0.6; }
+
+/* ---------- 06 Reflection ---------- */
+.cs-reflect__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(24px, 2.083vw, 30px);
+  line-height: 1.13;
+  letter-spacing: -0.03em;
+}
+.cs-split--reflect > p { margin: 0; }
+
+/* ---------- Next project ---------- */
+.cs-next .cs-stack > p { margin: 0; }
+.cs-next__title {
+  font-weight: 500;
+  font-size: clamp(37px, 6.111vw, 88px);
+  line-height: 1.125;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- Tablet / narrow: collapse stages ---------- */
+@media (max-width: 1100px) {
+  .cs-stage,
+  .cs-stage--rev { grid-template-columns: 1fr; gap: 28px; }
+  .cs-stage--rev .cs-stage__text { order: 0; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .cs-br-wide,
+  .br-wide { display: none; }
+
+  .cs-back { margin-bottom: 24px; }
+  .cs-eyebrow {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "project index" "category category";
+    row-gap: 12px;
+  }
+  .cs-eyebrow__project { grid-area: project; }
+  .cs-eyebrow__category { grid-area: category; }
+  .cs-eyebrow__index { grid-area: index; }
+  .cs-hero__rule { margin-top: 12px; }
+
+  .cs-title { margin: 24px 0 28px; line-height: 1.043; }
+
+  .cs-hero__body { grid-template-columns: 1fr; row-gap: 24px; padding-bottom: 0; }
+  .cs-hero__photo { order: -1; }
+  .cs-hero__photo figcaption {
+    position: static;
+    margin-top: 8px;
+    text-align: right;
+  }
+  .cs-meta > div { grid-template-columns: 104px 1fr; }
+
+  .cs-split,
+  .cs-split--reflect { grid-template-columns: 1fr; row-gap: 20px; }
+  .cs-split--reflect { row-gap: 16px; }
+
+  .cs-methods { grid-template-columns: 1fr; row-gap: 12px; }
+
+  .cs-insights { min-height: 0; padding: 24px; }
+  .cs-insights__list { grid-template-columns: 1fr; row-gap: 24px; }
+  .cs-insights__vrule { width: 100%; height: 1px; }
+  .cs-insight:first-child, .cs-insight:last-child { padding-inline: 0; }
+  .cs-insight { gap: 16px; }
+  .cs-insight__num { width: 44px; font-size: 28px; line-height: 32px; letter-spacing: -0.03em; }
+  .cs-takeaway { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cs-takeaway .mono { width: auto; }
+  .cs-takeaway__text { font-size: 18px; line-height: 29px; }
+
+  .cs-directions,
+  .cs-principles { grid-template-columns: 1fr; }
+  .cs-principles { gap: 24px; }
+
+  .cs-stage__ui { padding: 24px; gap: 16px; }
+  .cs-stage__text { padding: 24px; }
+
+  .cs-deliverable { grid-template-columns: 1fr; row-gap: 16px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+  .site-header__row { height: 80px; }
+  .cs-hero__photo img { aspect-ratio: 342 / 260; }
+  .cs-title { letter-spacing: -0.03em; margin-left: 0; }
+  .cs-hero__left { gap: 32px; }
+}

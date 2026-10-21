@@ -1,12 +1,15 @@
 # Mia Hsieh — Portfolio
 
-個人作品集網站。純 HTML / CSS,無 build 流程。設計稿來自 Figma(Portfolio / Desktop / 1440)。
+個人作品集網站。純 HTML / CSS,無 build 流程。設計稿來自 Figma。
 
 ## 檔案結構
 
-- `index.html` — 頁面內容
-- `styles.css` — 樣式(設計 token 在檔案最上方 `:root`)
-- `assets/` — 專案圖片
+- `index.html` — 首頁(Hero / About / Selected Work / Contact)
+- `trova.html` — TROVA. 案例頁(桌機 1440 + 手機 390 版型)
+- `styles.css` — 共用樣式(設計 token 在最上方 `:root`)
+- `case.css` — 案例頁專用樣式
+- `assets/` — 圖片;`assets/trova/` 是 TROVA. 案例頁素材
+- `vercel.json` — 啟用 clean URLs(`/trova.html` → `/trova`)
 
 ## 本機預覽
 
