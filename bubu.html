@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>補補 Bubu — UX Case Study | Mia Hsieh</title>
+  <meta name="description" content="補補 Bubu 居家消耗品補貨 App:從問卷與訪談研究、設計取捨到補貨流程與共享清單的 UX/UI 案例研究。">
+  <meta property="og:title" content="補補 Bubu — UX Case Study | Mia Hsieh">
+  <meta property="og:description" content="From noticing a need to getting it done.">
+  <meta property="og:type" content="article">
+  <meta name="theme-color" content="#f2f0e9">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case.css">
+  <link rel="stylesheet" href="bubu.css">
+</head>
+<body class="cs-page">
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="site-header__row">
+        <a class="wordmark" href="index.html">MIA HSIEH.</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#work">WORK</a>
+          <a href="index.html#contact">CONTACT</a>
+        </nav>
+      </div>
+      <hr class="rule">
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Section 01 / Project overview -->
+    <section class="cs-section cs-section--overview">
+      <div class="wrap cs-stack">
+
+        <div class="cs-hero">
+          <a class="cs-back mono mono--12" href="index.html#work">← BACK TO WORK</a>
+
+          <div class="cs-eyebrow mono mono--11">
+            <p class="cs-eyebrow__project">PROJECT 002 / UX CASE STUDY</p>
+            <p class="cs-eyebrow__category">HOME RESTOCK &amp; SHARED NEEDS APP</p>
+            <p class="cs-eyebrow__index">[ 02 ]</p>
+          </div>
+          <hr class="rule cs-hero__rule">
+
+          <h1 class="cs-title cs-title--zh" lang="zh-Hant">補補<span class="cs-title__dot">.</span></h1>
+
+          <div class="cs-hero__body">
+            <div class="cs-hero__left">
+              <div class="cs-statement">
+                <p class="cs-lead">From noticing a need to getting it done.</p>
+                <p lang="zh-Hant" class="zh cs-zh-15">補補是一款居家消耗品補貨管理 App，協助使用者記下補貨需求、整理待買用品，並透過共享空間與購買紀錄，讓需求從發現延續到完成。</p>
+              </div>
+              <dl class="cs-meta mono">
+                <div><dt>YEAR</dt><dd>2026</dd></div>
+                <div><dt>CATEGORY</dt><dd>UX/UI Design &amp; Front-end Development</dd></div>
+                <div><dt>TYPE</dt><dd>Team Project / 2 Members</dd></div>
+              </dl>
+            </div>
+
+            <figure class="cs-hero__photo bb-hero-photo">
+              <img src="assets/bubu/hero-app-screens.jpg" width="2400" height="1600" decoding="async"
+                   alt="一雙手正在整理收納盒裡的居家清潔用品,旁邊有綠色置物櫃與盆栽">
+              <figcaption class="mono mono--11" lang="zh-Hant">SOURCE: BUBU APP SCREENSHOTS / 我的用品・補貨明細・共享清單</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <div class="cs-split cs-split--role">
+          <div class="cs-role">
+            <p class="mono mono--11">MY ROLE</p>
+            <p class="cs-role__title">UI/UX Design &amp; Front-end Development</p>
+          </div>
+          <div class="bb-contrib">
+            <p class="mono mono--11 muted-grey">MY CONTRIBUTION</p>
+            <p lang="zh-Hant" class="zh cs-zh-17">主要負責用品管理、補貨提醒與補貨紀錄相關功能的規劃及實作，包含用品列表與篩選、狀態規則、新增用品、補貨明細及記錄補貨流程。同時負責專案規格整理與設計決策紀錄，協助維持功能與開發方向的一致性。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 02 / Problem & research -->
+    <section class="cs-section cs-section--tint">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">01 / THE PROBLEM</p>
+        <h2 class="cs-h2">Restocking needs are easy to notice, but easy to forget.</h2>
+
+        <div class="cs-split cs-split--role">
+          <p class="mono mono--11">INITIAL PROBLEM FRAMING</p>
+          <div lang="zh-Hant" class="zh cs-zh-17 bb-paras-16">
+            <p>生活用品的補貨需求經常出現在不方便立即購買的時刻。當需求沒有被妥善保留，使用者就需要依靠記憶或反覆確認用品狀態，增加日常管理負擔。</p>
+            <p>對於多人生活空間，也需要考慮如何讓補貨需求被共享、認領與完成。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <p class="mono mono--11">02 / RESEARCH / DISCOVERY</p>
+
+        <div class="bb-steps">
+          <article class="bb-step">
+            <hr class="rule">
+            <div class="bb-step__body">
+              <p class="mono mono--11">01</p>
+              <h3 class="bb-step__title">Problem Context</h3>
+              <p lang="zh-Hant" class="zh bb-step__text">補貨需求常出現在無法立即購買的時刻；多人空間還需共享、認領與完成。</p>
+            </div>
+          </article>
+          <article class="bb-step">
+            <hr class="rule">
+            <div class="bb-step__body">
+              <p class="mono mono--11">02</p>
+              <h3 class="bb-step__title">Research / Discovery</h3>
+              <p lang="zh-Hant" class="zh bb-step__text">問卷 47 份（2026/9/18–9/19）與 6 位深度訪談（A～F），並比較 3 款競品與 LINE。</p>
+            </div>
+          </article>
+          <article class="bb-step">
+            <hr class="rule">
+            <div class="bb-step__body">
+              <p class="mono mono--11">03</p>
+              <h3 class="bb-step__title">Key Insights</h3>
+              <p lang="zh-Hant" class="zh bb-step__text">四項研究發現：察覺時機、買到前中斷、記錄負擔、責任交接。</p>
+            </div>
+          </article>
+          <article class="bb-step">
+            <hr class="rule">
+            <div class="bb-step__body">
+              <p class="mono mono--11">04</p>
+              <h3 class="bb-step__title">Design Implication</h3>
+              <p lang="zh-Hant" class="zh bb-step__text">對應三項使用者需求，提出三個設計機會。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="bb-stats">
+          <div class="bb-stat">
+            <div class="bb-stat__row">
+              <p class="bb-stat__num">47</p>
+              <p lang="zh-Hant" class="zh bb-stat__label">份問卷回覆</p>
+            </div>
+            <p lang="zh-Hant" class="mono mono--11 muted-grey">2026/9/18–9/19，社群平台招募</p>
+          </div>
+          <div class="bb-stat">
+            <div class="bb-stat__row">
+              <p class="bb-stat__num">6</p>
+              <p lang="zh-Hant" class="zh bb-stat__label">位深度訪談（A～F）</p>
+            </div>
+            <p lang="zh-Hant" class="mono mono--11 muted-grey">2026/9/16–9/20，匿名呈現</p>
+          </div>
+          <div class="bb-stat">
+            <div class="bb-stat__row">
+              <p class="bb-stat__num">4</p>
+              <p lang="zh-Hant" class="zh bb-stat__label">項研究發現</p>
+            </div>
+            <p lang="zh-Hant" class="mono mono--11 muted-grey">三組主題：發現到買到、記錄負擔、多人交接</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <p class="mono mono--11">KEY RESEARCH FINDING</p>
+        <h3 class="cs-h3">Noticing a need is only the first step.</h3>
+
+        <div class="cs-split cs-split--role">
+          <p class="mono mono--11">WHAT DID THE RESEARCH SHOW?</p>
+          <p lang="zh-Hant" class="zh cs-zh-20">問題不只是用品快用完，而是知道要買的需求，常在真正買到之前中斷。</p>
+        </div>
+
+        <div class="cs-insights cs-insights--rows">
+          <div class="cs-insights__head mono mono--11">
+            <p>RESEARCH / KEY FINDINGS</p>
+            <p class="muted-grey">01 — 04</p>
+          </div>
+          <hr class="cs-insights__rule">
+
+          <div class="cs-insights__list">
+            <article class="cs-insight">
+              <p class="cs-insight__num">01.</p>
+              <div class="cs-insight__text">
+                <h3 class="cs-insight__title">Noticed Late</h3>
+                <div lang="zh-Hant" class="zh cs-zh-15-26">
+                  <p>35/47 曾在用品用完或快用完時才發現需要補充；<br class="br-wide">是否急迫仍取決於備品、替代方案與生活情境。</p>
+                </div>
+                <div class="bb-tags mono mono--11 muted-grey"><p>SURVEY 35/47</p><p>INTERVIEW A · B · C · D</p></div>
+              </div>
+            </article>
+            <hr class="cs-insights__vrule">
+            <article class="cs-insight">
+              <p class="cs-insight__num">02.</p>
+              <div class="cs-insight__text">
+                <h3 class="cs-insight__title">Lost Before Buying</h3>
+                <div lang="zh-Hant" class="zh cs-zh-15-26">
+                  <p>32/47 曾知道要買卻忘記；<br class="br-wide">用備忘錄或手機提醒的 18 人中，仍有 13 人曾忘記。</p>
+                </div>
+                <div class="bb-tags mono mono--11 muted-grey"><p>SURVEY 32/47</p><p>INTERVIEW A · C · F</p></div>
+              </div>
+            </article>
+          </div>
+
+          <hr class="cs-insights__rule">
+
+          <div class="cs-insights__list">
+            <article class="cs-insight">
+              <p class="cs-insight__num">03.</p>
+              <div class="cs-insight__text">
+                <h3 class="cs-insight__title">Recording Takes Effort</h3>
+                <div lang="zh-Hant" class="zh cs-zh-15-26">
+                  <p>8/47 想記錄卻覺得麻煩；<br class="br-wide">常見做法多不建檔：腦中記 28/47、口頭交代 14/47。</p>
+                </div>
+                <div class="bb-tags mono mono--11 muted-grey"><p>SURVEY 8/47</p><p>INTERVIEW B · F</p></div>
+              </div>
+            </article>
+            <hr class="cs-insights__vrule">
+            <article class="cs-insight">
+              <p class="cs-insight__num">04.</p>
+              <div class="cs-insight__text">
+                <h3 class="cs-insight__title">Unclear Handoff</h3>
+                <div lang="zh-Hant" class="zh cs-zh-15-26">
+                  <p>共居 37 人中 6 人曾以為別人會買，<br class="br-wide">或不確定別人買了沒；問題多出在責任交接。</p>
+                </div>
+                <div class="bb-tags mono mono--11 muted-grey"><p>SURVEY 6/37</p><p>INTERVIEW A · D · F</p></div>
+              </div>
+            </article>
+          </div>
+
+          <hr class="cs-insights__rule">
+          <div class="cs-takeaway">
+            <p class="mono mono--11">KEY TAKEAWAY</p>
+            <p lang="zh-Hant" class="zh cs-takeaway__text">補補優先處理「知道要買，卻在買到之前中斷」的需求，而不只是提醒用品快用完。</p>
+          </div>
+        </div>
+
+        <div class="cs-implication">
+          <p class="mono mono--11">DESIGN IMPLICATION / FROM INSIGHT TO DIRECTION</p>
+          <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-800">因此，補補以「先記下需求、適合購買時重新看見、買完留下紀錄」為主線，並在多人採買情境中提供認領與完成狀態。</p>
+        </div>
+
+        <div class="bb-source mono mono--11 muted-grey" lang="zh-Hant">
+          <p>SOURCE / PROPOSAL V2 · 02 使用者分析　樣本為本次問卷與訪談，不代表所有使用者比例</p>
+          <p>RESEARCH DETAILS / TO VERIFY</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 03 / Design direction -->
+    <section class="cs-section">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">03 / DESIGN DIRECTION</p>
+        <h2 class="cs-h2">Keep every restocking need moving forward.</h2>
+
+        <div class="bb-goal">
+          <p class="mono mono--11">DESIGN GOAL</p>
+          <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-900">降低記錄補貨需求的操作負擔，讓使用者即使無法立即購買，也能保留需求，並在之後順利完成。</p>
+        </div>
+
+        <p class="mono mono--11" lang="zh-Hant">SCOPE &amp; TRADE-OFFS / 功能取捨</p>
+
+        <div class="cs-directions">
+          <article class="cs-direction">
+            <p class="mono mono--11" lang="zh-Hant">FOCUS / 設計重心</p>
+            <p lang="zh-Hant" class="zh cs-direction__title">記下需求，而非盤點庫存</p>
+            <p lang="zh-Hant" class="zh cs-zh-17">以補貨紀錄推算預計補貨日，不要求使用者逐一維護剩餘數量。</p>
+          </article>
+          <article class="cs-direction">
+            <p class="mono mono--11" lang="zh-Hant">OUT OF SCOPE / 刻意不做</p>
+            <p lang="zh-Hant" class="zh cs-direction__title">完整庫存盤點與複雜消耗推估</p>
+            <p lang="zh-Hant" class="zh cs-zh-17">以降低記錄與維護負擔為優先，不列為主要流程。</p>
+          </article>
+        </div>
+
+        <p class="mono mono--11" lang="zh-Hant">DESIGN PRINCIPLES / 設計原則</p>
+
+        <div class="cs-principles cs-principles--4">
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">01</p>
+            <h3 class="cs-principle__title">Capture the Need</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">快速記下需要補貨的用品。</p>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">02</p>
+            <h3 class="cs-principle__title">Keep It Visible</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">讓尚未完成的需求持續可見。</p>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">03</p>
+            <h3 class="cs-principle__title">Support Shared Decisions</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">在共享空間中整理多人需求，減少重複確認。</p>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11">04</p>
+            <h3 class="cs-principle__title">Close the Loop</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">透過記錄補貨，讓需求具有明確完成狀態。</p>
+          </article>
+        </div>
+
+        <p lang="zh-Hant" class="zh cs-note-14 cs-measure-800">以上為設計原則與功能取捨，不代表所有功能已完成開發；目前尚未據此宣稱使用成效。</p>
+      </div>
+    </section>
+
+    <!-- Section 04 / Core solution -->
+    <section class="cs-section cs-section--tint">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">04 / CORE SOLUTION</p>
+        <h2 class="cs-h2">Four moments that keep a restocking need moving.</h2>
+        <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-900">以下皆使用補補實際 App 畫面（網頁版前端實作截圖），依序展示從察覺需求到完成補貨的四個關鍵時刻。</p>
+
+        <hr class="rule">
+
+        <!-- Stage A -->
+        <div class="cs-stage">
+          <figure class="cs-stage__ui">
+            <p class="mono mono--11 cs-stage__label">A / RECOGNIZE THE NEED</p>
+            <div class="bb-screens">
+              <div class="bb-screens__row bb-screens__row--zoom">
+                <div class="bb-screen">
+                  <div class="bb-screen__img"><img src="assets/bubu/screen-my-items.png" width="780" height="1688" loading="lazy" decoding="async" alt="補補「我的用品」列表,接近補貨時機的用品標示為「該補貨了」"></div>
+                  <p class="mono mono--11 muted-grey" lang="zh-Hant">01 / 我的用品</p>
+                </div>
+                <div class="bb-zoom">
+                  <p class="mono mono--11" lang="zh-Hant">DETAIL / 補貨明細：預計補貨日與狀態</p>
+                  <div class="bb-zoom__crop"><img src="assets/bubu/screen-restock-detail.png" width="780" height="1688" loading="lazy" decoding="async" alt="補貨明細局部放大:預計補貨日與狀態提醒卡"></div>
+                  <p lang="zh-Hant" class="zh bb-zoom__note">預計補貨日由補貨紀錄推算；到達提醒門檻後，用品會顯示「該補貨了」。</p>
+                </div>
+              </div>
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label muted-grey" lang="zh-Hant">SOURCE / BUBU APP SCREENSHOT · 我的用品、補貨明細</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">A / RECOGNIZE THE NEED</p>
+            <h3 class="cs-stage__title">Recognize the Need</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">當用品接近補貨時機，讓使用者更容易察覺需求。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：我的用品列表以「該補貨了」標示接近補貨時機的用品；補貨明細顯示預計補貨日與上次補貨。目前為 App 內標示，尚未實作主動推播通知。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- Stage B -->
+        <div class="cs-stage cs-stage--rev">
+          <figure class="cs-stage__ui">
+            <p class="mono mono--11 cs-stage__label">B / SAVE FOR LATER</p>
+            <div class="bb-screens">
+              <div class="bb-screens__row bb-screens__row--pair">
+                <div class="bb-screen">
+                  <div class="bb-screen__img"><img src="assets/bubu/screen-shopping-list.png" width="780" height="1688" loading="lazy" decoding="async" alt="補補「購買清單」畫面,可調整待買數量"></div>
+                  <p class="mono mono--11 muted-grey" lang="zh-Hant">01 / 購買清單</p>
+                </div>
+                <div class="bb-screen">
+                  <div class="bb-screen__img"><img src="assets/bubu/screen-snooze.png" width="780" height="1688" loading="lazy" decoding="async" alt="補補「延後提醒」畫面,可選擇下次提醒日期"></div>
+                  <p class="mono mono--11 muted-grey" lang="zh-Hant">02 / 延後提醒</p>
+                </div>
+              </div>
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label muted-grey" lang="zh-Hant">SOURCE / BUBU APP SCREENSHOT · 購買清單、延後提醒</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">B / SAVE FOR LATER</p>
+            <h3 class="cs-stage__title">Save for Later</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">即使當下不方便購買，也能先保存需求。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：用品加入購買清單後，可調整待買數量；個人清單的項目可延後提醒並選擇下次提醒日期（最早為明天）。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- Stage C -->
+        <div class="cs-stage">
+          <figure class="cs-stage__ui cs-stage__ui--stone">
+            <p class="mono mono--11 cs-stage__label">C / SHARED SHOPPING</p>
+            <div class="cs-iphone cs-iphone--bubu">
+              <span class="cs-iphone__btn cs-iphone__btn--l1"></span>
+              <span class="cs-iphone__btn cs-iphone__btn--l2"></span>
+              <span class="cs-iphone__btn cs-iphone__btn--l3"></span>
+              <span class="cs-iphone__btn cs-iphone__btn--r1"></span>
+              <div class="cs-iphone__body"></div>
+              <div class="cs-iphone__screen">
+                <img src="assets/bubu/screen-shared-list.png" width="780" height="1688" loading="lazy" decoding="async"
+                     alt="補補「共享清單」畫面,分為待認領與已認領,並標示認領者">
+              </div>
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label muted-grey" lang="zh-Hant">SOURCE / BUBU APP SCREENSHOT · 共享清單（單一裝置模擬成員）</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">C / SHARED SHOPPING</p>
+            <h3 class="cs-stage__title">Shared Shopping</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">讓多人生活空間中的補貨需求可以被共同查看與處理。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：共享清單分為「待認領」與「已認領」，並標示認領者；可一次認領全部待認領項目。目前以單一裝置模擬成員，尚未連接後端與即時同步。</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- Stage D -->
+        <div class="cs-stage cs-stage--rev">
+          <figure class="cs-stage__ui">
+            <p class="mono mono--11 cs-stage__label">D / CLOSE THE LOOP</p>
+            <div class="bb-screens">
+              <div class="bb-screens__row bb-screens__row--pair">
+                <div class="bb-screen">
+                  <div class="bb-screen__img"><img src="assets/bubu/screen-record-restock.png" width="780" height="1688" loading="lazy" decoding="async" alt="補補「記錄補貨」畫面,可選擇用品與日期"></div>
+                  <p class="mono mono--11 muted-grey" lang="zh-Hant">01 / 記錄補貨</p>
+                </div>
+                <div class="bb-screen">
+                  <div class="bb-screen__img"><img src="assets/bubu/screen-restock-detail.png" width="780" height="1688" loading="lazy" decoding="async" alt="補補「補貨明細」畫面,累積補貨紀錄與預計補貨日"></div>
+                  <p class="mono mono--11 muted-grey" lang="zh-Hant">02 / 補貨明細</p>
+                </div>
+              </div>
+            </div>
+            <figcaption class="mono mono--11 cs-stage__label muted-grey" lang="zh-Hant">SOURCE / BUBU APP SCREENSHOT · 記錄補貨、補貨明細</figcaption>
+          </figure>
+          <div class="cs-stage__text">
+            <p class="mono mono--11">D / CLOSE THE LOOP</p>
+            <h3 class="cs-stage__title">Close the Loop</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">完成購買後留下紀錄，讓補貨需求形成完整閉環。</p>
+            <hr class="rule">
+            <p lang="zh-Hant" class="zh cs-note-14-25">畫面重點：記錄補貨可選擇用品與日期（預設今天）；補貨明細會累積補貨紀錄，作為預計補貨日的推算依據。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05 / Final deliverables -->
+    <section class="cs-section">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">05 / FINAL DELIVERABLES</p>
+        <h2 class="cs-h2">Explore the experience.</h2>
+        <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-940">補補已完成手機尺寸的前端補貨流程（網頁版）與 Figma 設計稿。以下列出成果入口；尚未確認的連結已標示，不以未完成的內容替代。</p>
+
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__copy">
+            <h3 class="cs-h3-sm">Interactive Prototype</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">補補的 Figma Prototype，展示補貨、購買清單與共享認領流程的互動設計。Prototype 為設計展示，不是正式上線產品。</p>
+          </div>
+          <div class="bb-cta">
+            <p class="mono mono--12 muted-grey">VIEW PROTOTYPE ↗</p>
+            <p class="mono mono--11">PROTOTYPE URL / TO CONFIRM</p>
+          </div>
+        </div>
+
+        <div class="bb-placeholder">
+          <p class="mono mono--11">PLACEHOLDER / INTERACTIVE PROTOTYPE EMBED</p>
+          <p lang="zh-Hant" class="zh bb-placeholder__note">預留 Figma Prototype 互動展示區（iframe）。取得公開 Prototype 連結後置入。</p>
+          <p class="mono mono--11">PROTOTYPE URL / TO CONFIRM</p>
+        </div>
+
+        <hr class="rule">
+
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__copy">
+            <h3 class="cs-h3-sm">App Implementation</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">以 Vue 3 與 Vite 實作的手機尺寸前端網頁，並非原生 App。資料保存於瀏覽器 localStorage，沒有後端；共享情境以單一裝置模擬成員。</p>
+            <p class="mono mono--11 muted-grey">STATUS / FRONT-END BUILD · NOT A PRODUCTION RELEASE</p>
+          </div>
+          <div class="bb-cta">
+            <p class="mono mono--12 muted-grey">VIEW LIVE DEMO ↗</p>
+            <p class="mono mono--11">DEMO URL / TO CONFIRM</p>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__copy">
+            <h3 class="cs-h3-sm">GitHub Repository</h3>
+            <p lang="zh-Hant" class="zh cs-zh-17">補補的前端原始碼與決策紀錄。公開展示的內容與完成狀態待確認。</p>
+            <p class="mono mono--11 muted-grey">REPOSITORY / PUBLIC · CONTENT TO CONFIRM</p>
+          </div>
+          <div class="bb-cta">
+            <a class="cs-deliverable__link mono mono--12" href="https://github.com/xiedailing/home-restock-app" target="_blank" rel="noopener noreferrer">VISIT REPOSITORY ↗</a>
+            <p class="mono mono--11">github.com/xiedailing/home-restock-app</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06 / Reflection -->
+    <section class="cs-section cs-section--tint">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11">06 / REFLECTION</p>
+        <h2 class="cs-h2">What I learned.</h2>
+        <p class="mono mono--11 muted-grey" lang="zh-Hant">DRAFT / TO REVIEW　以下為提案文案，待本人確認後修改</p>
+        <hr class="rule">
+
+        <div class="cs-split cs-split--reflect">
+          <div class="bb-reflect__head">
+            <p class="mono mono--11 muted-grey">01 /</p>
+            <h3 class="cs-reflect__title">Product Thinking</h3>
+          </div>
+          <p lang="zh-Hant" class="zh cs-zh-17">將「發現需要補貨，卻無法立刻購買」的生活情境，轉化為明確的產品需求：先留下需求，再讓它在適合的時機被看見並完成。</p>
+        </div>
+        <hr class="rule">
+        <div class="cs-split cs-split--reflect">
+          <div class="bb-reflect__head">
+            <p class="mono mono--11 muted-grey">02 /</p>
+            <h3 class="cs-reflect__title">Collaboration &amp; Trade-offs</h3>
+          </div>
+          <p lang="zh-Hant" class="zh cs-zh-17">兩人合作需要先對齊規格與功能邊界，並在時程內取捨範圍；例如以補貨紀錄推算預計補貨日，而不追蹤完整庫存。</p>
+        </div>
+        <hr class="rule">
+        <div class="cs-split cs-split--reflect">
+          <div class="bb-reflect__head">
+            <p class="mono mono--11 muted-grey">03 /</p>
+            <h3 class="cs-reflect__title">Next Steps</h3>
+          </div>
+          <p lang="zh-Hant" class="zh cs-zh-17">後續需要驗證互動流程、共享情境與提醒時機，並透過使用者測試確認使用者是否願意持續記錄，以及共享認領流程是否清楚。</p>
+        </div>
+        <hr class="rule">
+      </div>
+    </section>
+
+    <!-- Next project -->
+    <section class="cs-section cs-next">
+      <div class="wrap">
+        <a class="cs-next__link" href="trova.html">
+          <p class="mono mono--11">NEXT PROJECT / TROVA ↗</p>
+          <p class="cs-next__title">TROVA.</p>
+          <p lang="zh-Hant" class="zh cs-zh-17">AI 旅遊行程規劃平台</p>
+          <p class="mono mono--11">CASE STUDY / PROJECT 001</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <p class="mono mono--11 contact__label">CONTACT</p>
+      <div class="contact__main">
+        <p class="contact__headline">Let's connect.</p>
+        <ul class="contact__links">
+          <li><a class="mono mono--13" href="mailto:xiedailing0324@gmail.com">EMAIL ↗</a></li>
+          <li><a class="mono mono--13" href="https://github.com/xiedailing" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></li>
+          <li><span class="mono mono--12 contact__pending">RESUME / COMING SOON</span></li>
+        </ul>
+      </div>
+      <hr class="rule rule--strong">
+      <div class="contact__meta mono mono--10">
+        <p>© 2026 MIA HSIEH</p>
+        <p class="contact__meta-note">PERSONAL PORTFOLIO / UI &amp; UX DESIGN</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

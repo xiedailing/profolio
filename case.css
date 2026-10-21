@@ -481,7 +481,10 @@
 .cs-split--reflect > p { margin: 0; }
 
 /* ---------- Next project ---------- */
-.cs-next .cs-stack > p { margin: 0; }
+.cs-next__link { display: flex; flex-direction: column; gap: var(--cs-gap); }
+.cs-next__link p { margin: 0; }
+.cs-next__title { transition: opacity 0.2s ease; }
+.cs-next__link:hover .cs-next__title { opacity: 0.6; }
 .cs-next__title {
   font-weight: 500;
   font-size: clamp(37px, 6.111vw, 88px);

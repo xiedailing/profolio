@@ -6,9 +6,11 @@
 
 - `index.html` — 首頁(Hero / About / Selected Work / Contact)
 - `trova.html` — TROVA. 案例頁(桌機 1440 + 手機 390 版型)
+- `bubu.html` — 補補 Bubu 案例頁(桌機 1440,平板/手機依 TROVA 版型推導)
 - `styles.css` — 共用樣式(設計 token 在最上方 `:root`)
-- `case.css` — 案例頁專用樣式
-- `assets/` — 圖片;`assets/trova/` 是 TROVA. 案例頁素材
+- `case.css` — 案例頁共用樣式(TROVA 與補補)
+- `bubu.css` — 補補案例頁專用樣式
+- `assets/` — 圖片;`assets/trova/`、`assets/bubu/` 是各案例頁素材
 - `vercel.json` — 啟用 clean URLs(`/trova.html` → `/trova`)
 
 ## 本機預覽

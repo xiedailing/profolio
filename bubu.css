@@ -1,0 +1,212 @@
+/* 補補 Bubu case study — extends case.css.
+   Desktop values come from "BUBU / Case Study / Desktop / 1440 / V1";
+   tablet/mobile follow the TROVA mobile patterns. */
+
+/* ---------- Hero ---------- */
+/* Noto Sans TC sits lower in its line box than Inter; lift the glyphs 0.066em
+   (19px at 288px) so they land where the Figma frame has them. */
+.cs-title.cs-title--zh {
+  margin: calc(24px - 0.066em) 0 calc(17px + 0.066em) -0.014em;
+  font-family: var(--font-zh);
+  font-weight: 500;
+}
+.cs-title__dot { font-family: var(--font-sans); line-height: 0; }
+
+.bb-hero-photo img { background: var(--surface); }
+
+.bb-contrib { display: flex; flex-direction: column; gap: 12px; }
+.bb-contrib p { margin: 0; }
+
+/* ---------- Problem & research ---------- */
+.bb-paras-16 { display: flex; flex-direction: column; gap: 16px; }
+.bb-paras-16 p { margin: 0; }
+
+.bb-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.bb-step { display: flex; flex-direction: column; gap: 12px; }
+.bb-step__body { display: flex; flex-direction: column; gap: 12px; padding-top: 4px; }
+.bb-step__body > p { margin: 0; }
+.bb-step__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(22px, 1.667vw, 24px);
+  line-height: 1.167;
+  letter-spacing: -0.03em;
+}
+.bb-step__text { font-size: 14px; line-height: 24px; }
+
+.bb-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.bb-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px;
+  background: var(--bg);
+}
+.bb-stat > p { margin: 0; }
+.bb-stat__row { display: flex; align-items: flex-end; gap: 12px; white-space: nowrap; }
+.bb-stat__row p { margin: 0; }
+.bb-stat__num {
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 56px;
+  letter-spacing: -0.03em;
+}
+.bb-stat__label { font-size: 17px; line-height: 28px; }
+
+/* Insights card with two rows (4 findings) */
+.cs-insights--rows { min-height: 0; }
+.cs-insights--rows .cs-insights__list { flex: none; }
+.cs-insights--rows .cs-insight { padding-block: 24px; }
+.cs-insights--rows .cs-insight__num { width: auto; white-space: nowrap; }
+.cs-insights--rows .cs-insight__text { gap: 10px; }
+.cs-insights--rows .cs-insight__text > div > p { margin: 0; }
+.bb-tags { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.bb-tags p { margin: 0; }
+
+.bb-source {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+.bb-source p { margin: 0; }
+
+/* ---------- Design direction ---------- */
+.bb-goal { display: flex; flex-direction: column; gap: 12px; }
+.bb-goal p { margin: 0; }
+
+.cs-principles--4 { grid-template-columns: repeat(4, 1fr); align-items: start; }
+.cs-principles--4 .cs-principle__title {
+  min-height: 56px;
+  font-size: clamp(22px, 1.806vw, 26px);
+  line-height: 28px;
+}
+
+/* ---------- Core solution ---------- */
+.cs-stage__label.muted-grey { color: var(--grey); }
+.cs-stage__ui--stone { background: var(--rule); }
+
+/* Screens: pairs / zoom layouts switch on the panel's own width */
+.bb-screens { container: bbs / inline-size; width: 100%; }
+.bb-screens__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+@container bbs (min-width: 564px) {
+  .bb-screens__row--pair { flex-direction: row; align-items: flex-start; justify-content: center; }
+  .bb-screens__row--pair .bb-screen { flex: none; width: 270px; }
+}
+@container bbs (min-width: 650px) {
+  .bb-screens__row--zoom { flex-direction: row; align-items: center; justify-content: center; gap: 32px; }
+  .bb-screens__row--zoom .bb-screen { flex: none; width: 270px; }
+  .bb-screens__row--zoom .bb-zoom { flex: none; width: 355px; }
+}
+
+.bb-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: min(270px, 100%);
+}
+.bb-screen > p { margin: 0; }
+.bb-screen__img {
+  width: 100%;
+  aspect-ratio: 270 / 584;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 28px;
+  background: #fff;
+}
+.bb-screen__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.bb-zoom { display: flex; flex-direction: column; gap: 10px; width: min(355px, 100%); }
+.bb-zoom > p { margin: 0; }
+.bb-zoom__crop {
+  position: relative;
+  aspect-ratio: 355 / 234;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  background: #fff;
+}
+.bb-zoom__crop img {
+  position: absolute;
+  left: -0.28%;
+  top: -29.49%;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+.bb-zoom__note { font-size: 13px; line-height: 22px; color: var(--grey); }
+
+/* iPhone frame, Bubu size + inset screenshot */
+.cs-iphone--bubu { width: min(339.894px, 100%); }
+.cs-iphone--bubu .cs-iphone__screen { background: #efebe3; }
+.cs-iphone--bubu .cs-iphone__screen img {
+  position: absolute;
+  left: 2.5%;
+  top: 2.57%;
+  width: 95%;
+  height: 97.64%;
+  object-fit: cover;
+}
+
+/* ---------- Deliverables ---------- */
+.bb-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.bb-cta p { margin: 0; }
+.bb-cta .cs-deliverable__link { line-height: 18px; }
+.cs-deliverable__copy .mono { line-height: 17px; }
+
+.bb-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 420px;
+  padding: 40px;
+  border: 1px dashed var(--rule);
+  border-radius: 36px;
+  text-align: center;
+}
+.bb-placeholder p { margin: 0; }
+.bb-placeholder__note { font-size: 15px; line-height: 26px; color: var(--grey); }
+
+/* ---------- Reflection ---------- */
+.bb-reflect__head { display: flex; flex-direction: column; gap: 10px; }
+.bb-reflect__head p { margin: 0; }
+.bb-reflect__head .cs-reflect__title { line-height: 34px; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .cs-title.cs-title--zh { margin-block: calc(24px - 0.066em) calc(28px + 0.066em); }
+  .cs-hero__photo figcaption { white-space: normal; }
+
+  .bb-steps { grid-template-columns: 1fr 1fr; }
+  .bb-stats { grid-template-columns: 1fr; }
+
+  .cs-insights--rows .cs-insight { padding-block: 0; }
+  .cs-insights--rows .cs-insights__list { row-gap: 24px; }
+  .cs-insights--rows .cs-insight__title { line-height: 34px; }
+
+  .cs-principles.cs-principles--4 { grid-template-columns: 1fr 1fr; }
+  .cs-principles--4 .cs-principle__title { min-height: 0; }
+
+  .bb-source { flex-direction: column; }
+  .bb-placeholder { min-height: 0; padding: 32px 24px; border-radius: 28px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+  .cs-title.cs-title--zh { margin-left: 0; }
+  .bb-steps { grid-template-columns: 1fr; }
+  .cs-principles.cs-principles--4 { grid-template-columns: 1fr; }
+}
