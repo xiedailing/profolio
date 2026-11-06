@@ -1,0 +1,68 @@
+/* TROVA 專屬樣式（共用的配色、頁首、導覽、一屏一段、燈箱在 case-ext.css）。 */
+
+/* 手機比補補大約 16%：TROVA 的畫面資訊較密（地圖、行程卡片）。畫面在外框內的縮進比例與補補相同。
+   --shot-h = 手機高度：視窗高度的 70%，上限 630px，並隨視窗寬度縮小（補補是 60%／540px／31vw）。 */
+#solution { --shot-h: min(70svh, 630px, 36vw); }
+
+/* 畫面縮進後露出的那一圈邊，底色改成與 TROVA 畫面邊緣相同的 #fbfaf7（量得四張圖的邊緣都是這個色），
+   狀態列才會一路接到外框邊緣。補補的截圖邊緣是 #efebe3，維持 case-ext.css 的預設。 */
+#solution .cs-iphone--shot .cs-iphone__screen { background: #fbfaf7; }
+
+/* ---------- 核心解法 B「AI 檢查」：組合構圖 ----------
+   組合 = 手機（iPhone 外框）＋ 局部放大框（高亮框）＋ 引導線 ＋ AI 提醒卡。以 % 與 cqw 隨寬度縮放。
+   設計尺寸 668 × 630（原設計 657 × 589.68 是平面手機；改用 iPhone 外框、畫面縮進後，畫面變小，
+   為了讓高亮框高度（約 112px）仍與引導線兩端吻合，外框加寬到 293px，右側元素右移 10.73px、下移 18.74px）。
+   高亮框放進手機螢幕內，隨畫面移動；數值由外框比例與縮進規則（case-ext.css .cs-iphone--shot）推算：
+   螢幕內 left 5.32%／top 68.12%／width 89.36%／height 18.55%。 */
+.cs-zoom__phone .cs-iphone--shot { position: absolute; left: 0; top: 0; width: 100%; }
+#solution .cs-zoom__phone .cs-iphone--shot { width: 100%; }   /* 蓋過共用的桌機寬度規則 */
+.cs-zoom__phone .cs-zoom__highlight { left: 5.32%; top: 68.12%; width: 89.36%; height: 18.55%; }
+
+/* 容器寬度 ≥ 520px 時用組合構圖（case.css 原本的門檻） */
+@container zoom (min-width: 520px) {
+  #solution .cs-zoom__inner {
+    container-type: inline-size;
+    position: relative;
+    display: block;
+    width: min(100%, 668px);
+    aspect-ratio: 668 / 630;
+  }
+  #solution .cs-zoom__phone { position: absolute; left: 0; top: 0; width: 43.862%; height: 100%; aspect-ratio: auto; }
+  #solution .cs-zoom__leader { display: block; position: absolute; left: 41.098%; top: 63.245%; width: 8.434%; height: 22.824%; }
+  #solution .cs-zoom .cs-zoom__label,
+  #solution .cs-zoom .cs-zoom__caption {
+    position: absolute;
+    left: 49.511%;
+    font-size: calc(11 * 0.1497cqw);
+    line-height: calc(17 * 0.1497cqw);
+    white-space: nowrap;
+  }
+  #solution .cs-zoom .cs-zoom__label { top: 58.88%; }
+  #solution .cs-zoom .cs-zoom__caption { top: 87.896%; }
+  #solution .cs-aicard { --u: 0.1497cqw; position: absolute; left: 48.283%; top: 62.546%; width: 54.042%; }
+}
+
+/* 桌機（≥1100px）一律用組合構圖，並依視窗高度限制寬度，讓這一段也剛好放進一個畫面。
+   寬度 = min(欄寬, 668px, 手機高度的 1.26 倍, 視窗高度扣掉標題與說明後可用的高度對應的寬度)。 */
+@media (min-width: 1100px) {
+  #solution .cs-zoom__inner {
+    container-type: inline-size;
+    position: relative;
+    display: block;
+    width: min(100%, 668px, calc(var(--shot-h) * 1.26), calc((100svh - 260px) * 1.0603));
+    aspect-ratio: 668 / 630;
+  }
+  #solution .cs-zoom__phone { position: absolute; left: 0; top: 0; width: 43.862%; height: 100%; aspect-ratio: auto; }
+  #solution .cs-zoom__leader { display: block; position: absolute; left: 41.098%; top: 63.245%; width: 8.434%; height: 22.824%; }
+  #solution .cs-zoom .cs-zoom__label,
+  #solution .cs-zoom .cs-zoom__caption {
+    position: absolute;
+    left: 49.511%;
+    font-size: calc(11 * 0.1497cqw);
+    line-height: calc(17 * 0.1497cqw);
+    white-space: nowrap;
+  }
+  #solution .cs-zoom .cs-zoom__label { top: 58.88%; }
+  #solution .cs-zoom .cs-zoom__caption { top: 87.896%; }
+  #solution .cs-aicard { --u: 0.1497cqw; position: absolute; left: 48.283%; top: 62.546%; width: 54.042%; }
+}
