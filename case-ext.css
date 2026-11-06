@@ -78,9 +78,9 @@ html { scroll-padding-top: 24px; }
 @media (min-width: 1100px) {
   /* 側邊導覽列：固定在左側，捲過頁首才出現，到「下一個專案」時淡出（見 case-ext.js）。無外框；字色對比 ≥ 5。 */
   .cs-toc {
-    display: block; position: fixed; z-index: 20; top: 28px; width: 150px;
+    display: block; position: fixed; z-index: 20; top: calc(28px + var(--header-offset, 0px)); width: 150px;
     left: max(var(--gutter), calc((100vw - var(--content-max)) / 2));
-    opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s ease, top 0.3s ease;   /* top：導覽列出現／收起時一起移動 */
   }
   .cs-toc.is-on { opacity: 1; pointer-events: auto; }
   .cs-toc p { margin: 0 0 14px; color: var(--grey); }
@@ -101,7 +101,7 @@ html { scroll-padding-top: 24px; }
      padding 與負 margin 互相抵銷，所以未固定時版面與原本相同；背景與章節同色，內容從下方捲過時被蓋住。
      box-shadow 加 clip-path 讓底色橫向延伸到視窗兩側、垂直方向不外溢。 */
   .cs-sticky-label {
-    position: sticky; top: 0; z-index: 10;
+    position: sticky; top: var(--header-offset, 0px); z-index: 10; transition: top 0.3s ease;   /* 導覽列出現時往下讓位 */
     padding: 28px 0 19px; margin: -28px 0 -19px;
     background: var(--sec-bg); box-shadow: 0 0 0 100vmax var(--sec-bg); clip-path: inset(0 -100vmax);
   }
@@ -111,7 +111,8 @@ html { scroll-padding-top: 24px; }
   #overview { padding-top: 28px; padding-bottom: 56px; }
   #overview .cs-stack { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; row-gap: 20px; align-items: start; }
   #overview .cs-hero, #overview .cs-hero__body, #overview .cs-hero__left { display: contents; }
-  #overview .cs-back { grid-column: 1 / -1; grid-row: 1; margin: 0; }
+  /* justify-self: start：網格項目預設會撐滿整列，連結會變成整排寬、hover 底線拉過整個內容區 */
+  #overview .cs-back { grid-column: 1 / -1; grid-row: 1; margin: 0; justify-self: start; }
   #overview .cs-eyebrow { grid-column: 1 / -1; grid-row: 2; }
   #overview .cs-hero__rule { grid-column: 1 / -1; grid-row: 3; margin: 0; }
   #overview .cs-title {
@@ -139,5 +140,5 @@ html { scroll-padding-top: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cs-toc, .cs-toc a, .cs-zoomable::before { transition: none; }
+  .cs-toc, .cs-toc a, .cs-zoomable::before, .cs-sticky-label { transition: none; }
 }

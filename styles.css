@@ -119,6 +119,15 @@ a { color: inherit; text-decoration: none; }
 }
 .site-nav a { display: inline-block; padding-block: 13px; }
 
+/* 導覽列固定在頂端：往下捲收起、往上捲出現（site-header.js）。
+   --header-h＝導覽列高度；--header-offset＝目前露出的高度（收起時 0），案例頁的固定小標題與側邊導覽用它往下讓位。 */
+:root { --header-h: 97px; --header-offset: 97px; }
+.site-header { position: sticky; top: 0; z-index: 30; background: var(--bg); transition: transform 0.3s ease, visibility 0s; }
+/* 收起後再設 visibility: hidden（等滑出動畫結束才生效）：收起時連結不能被聚焦，避免瀏覽器為了把連結捲進畫面而把整頁往上跳 */
+.site-header.is-hidden { transform: translateY(-100%); visibility: hidden; transition: transform 0.3s ease, visibility 0s linear 0.3s; }
+html { scroll-padding-top: var(--header-h); }
+@media (prefers-reduced-motion: reduce) { .site-header, .site-header.is-hidden { transition: none; } }
+
 /* ---------- Hero ---------- */
 .hero { padding-block: 80px 48px; }
 
