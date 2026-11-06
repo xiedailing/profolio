@@ -328,6 +328,10 @@ html { scroll-padding-top: var(--header-h); }
 .contact__meta p { width: min(400px, 100%); }
 .contact__meta-note { color: var(--footer-muted); }
 
+/* 標題下方的一句話：說明在找什麼機會 */
+.contact__lead { display: flex; flex-direction: column; gap: 20px; }
+.contact__note { max-width: 36em; color: var(--footer-muted); font-family: var(--font-zh); font-size: 16px; line-height: 27px; }
+
 /* ---------- Tablet ---------- */
 @media (max-width: 900px) {
   .hero { padding-block: 56px 40px; }

@@ -243,3 +243,7 @@
   .bb-ut__shots { flex-wrap: nowrap; }
   .bb-shot { flex: none; width: calc(var(--shot-h) * 0.4623); max-width: none; }
 }
+
+/* ---------- 產品決策（沿用 .cs-principles 三欄；每欄加「為什麼／取捨」兩列）---------- */
+.bb-decision__row { display: flex; flex-direction: column; gap: 6px; }
+.bb-decision__row p { margin: 0; }

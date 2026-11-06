@@ -28,6 +28,7 @@
       <li><a href="#direction">設計方向</a></li>
       <li><a href="#solution">核心解法</a></li>
       <li><a href="#testing">可用性測試</a></li>
+      <li><a href="#decisions">產品決策</a></li>
       <li><a href="#deliverables">成果</a></li>
       <li><a href="#reflection">反思</a></li>
     </ol>
@@ -38,9 +39,9 @@
       <div class="site-header__row">
         <a class="wordmark" href="index.html">MIA HSIEH.</a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="index.html#about">ABOUT</a>
-          <a href="index.html#work">WORK</a>
-          <a href="index.html#contact">CONTACT</a>
+          <a href="index.html#about">關於</a>
+          <a href="index.html#work">作品</a>
+          <a href="index.html#contact">聯絡</a>
         </nav>
       </div>
       <hr class="rule">
@@ -632,10 +633,64 @@
       </div>
     </section>
 
-    <!-- Section 06 / Final deliverables -->
-    <section id="deliverables" class="cs-section cs-section--tint">
+    <!-- Section 06 / Product decisions -->
+    <section id="decisions" class="cs-section cs-section--tint">
       <div class="wrap cs-stack">
-        <p class="mono mono--11 cs-sticky-label">06 / 成果</p>
+        <p class="mono mono--11 cs-sticky-label">06 / 產品決策</p>
+        <h2 class="cs-h2">在有限時間內，決定做什麼、不做什麼。</h2>
+        <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-900">接近繳交期限時，我比較每個選項的<strong>成本與價值</strong>，並把理由寫進決策紀錄。以下三個決策，都來自測試之後的修正。</p>
+
+        <div class="cs-principles">
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11" lang="zh-Hant">決策 01 / 範圍取捨</p>
+            <h3 class="cs-principle__title" lang="zh-Hant">不做「暫時不用補貨」</h3>
+            <div class="bb-decision__row">
+              <p class="mono mono--11 muted-grey" lang="zh-Hant">為什麼</p>
+              <p lang="zh-Hant" class="zh cs-zh-15-26">這個功能讓用品延後 7 天再提醒，原本只有首頁選單有入口，首頁移除後就沒有入口；App 沒有推播，誤報只是一個標記，代價低；而且要改動多份規格，<strong>成本高於價值</strong>。</p>
+            </div>
+            <div class="bb-decision__row">
+              <p class="mono mono--11 muted-grey" lang="zh-Hant">取捨</p>
+              <p lang="zh-Hant" class="zh cs-zh-15-26">放棄這個功能，列為未來展望；使用者仍可關閉該用品的提醒，或記錄補貨後讓系統重算。購買清單裡的「延後提醒」則保留。</p>
+            </div>
+            <div class="bb-tags mono mono--11 muted-grey" lang="zh-Hant"><p>決策紀錄</p><p>UT-36</p></div>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11" lang="zh-Hant">決策 02 / 重新評估</p>
+            <h3 class="cs-principle__title" lang="zh-Hant">批次選取：先延後，再納入</h3>
+            <div class="bb-decision__row">
+              <p class="mono mono--11 muted-grey" lang="zh-Hant">為什麼</p>
+              <p lang="zh-Hant" class="zh cs-zh-15-26">一開始工作量太大而延後；重新評估後，只做最有價值的<strong>「批次加入購買清單」</strong>，批次刪除與批次記錄補貨仍不做。</p>
+            </div>
+            <div class="bb-decision__row">
+              <p class="mono mono--11 muted-grey" lang="zh-Hant">取捨</p>
+              <p lang="zh-Hant" class="zh cs-zh-15-26">長按進入選取模式不容易被發現；之後視測試結果再決定是否補上入口。</p>
+            </div>
+            <div class="bb-tags mono mono--11 muted-grey" lang="zh-Hant"><p>決策紀錄</p><p>UT-32 · UT-43</p></div>
+          </article>
+          <article class="cs-principle">
+            <hr class="rule">
+            <p class="mono mono--11" lang="zh-Hant">決策 03 / 用詞</p>
+            <h3 class="cs-principle__title" lang="zh-Hant">把「認購」改成「認領」</h3>
+            <div class="bb-decision__row">
+              <p class="mono mono--11 muted-grey" lang="zh-Hant">為什麼</p>
+              <p lang="zh-Hant" class="zh cs-zh-15-26">3/7 位測試者覺得「認購」不直覺，有人以為已經買了。比較幾種說法後，我們選了只換一個字、又和「已購買」分得開的<strong>「認領」</strong>。</p>
+            </div>
+            <div class="bb-decision__row">
+              <p class="mono mono--11 muted-grey" lang="zh-Hant">取捨</p>
+              <p lang="zh-Hant" class="zh cs-zh-15-26">「我來買」更口語，但要重做標籤與按鈕文案，時間來不及；所以只換用詞，不改流程。</p>
+            </div>
+            <div class="bb-tags mono mono--11 muted-grey" lang="zh-Hant"><p>決策紀錄</p><p>UT-41</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 07 / Final deliverables -->
+    <section id="deliverables" class="cs-section">
+      <div class="wrap cs-stack">
+        <p class="mono mono--11 cs-sticky-label">07 / 成果</p>
         <h2 class="cs-h2">親自體驗看看。</h2>
         <p lang="zh-Hant" class="zh cs-zh-17 cs-measure-940">補補已完成手機尺寸的前端補貨流程（網頁版）。以下列出成果入口。</p>
 
@@ -667,10 +722,10 @@
       </div>
     </section>
 
-    <!-- Section 07 / Reflection -->
-    <section id="reflection" class="cs-section">
+    <!-- Section 08 / Reflection -->
+    <section id="reflection" class="cs-section cs-section--tint">
       <div class="wrap cs-stack">
-        <p class="mono mono--11 cs-sticky-label">07 / 反思</p>
+        <p class="mono mono--11 cs-sticky-label">08 / 反思</p>
         <h2 class="cs-h2">我學到的事。</h2>
         <hr class="rule">
 
@@ -717,19 +772,21 @@
 
   <footer class="contact" id="contact">
     <div class="wrap">
-      <p class="mono mono--11 contact__label">CONTACT</p>
+      <p class="mono mono--11 contact__label" lang="zh-Hant">聯絡</p>
       <div class="contact__main">
-        <p class="contact__headline">Let's connect.</p>
+        <div class="contact__lead">
+          <p class="contact__headline">Let's connect.</p>
+          <p class="contact__note" lang="zh-Hant">目前正在尋找 UI/UX 設計相關的機會，歡迎與我聯繫。</p>
+        </div>
         <ul class="contact__links">
-          <li><a class="mono mono--13" href="mailto:xiedailing0324@gmail.com">EMAIL ↗</a></li>
+          <li><a class="mono mono--13" href="mailto:xiedailing0324@gmail.com">電子郵件 ↗</a></li>
           <li><a class="mono mono--13" href="https://github.com/xiedailing" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></li>
-          <li><a class="mono mono--13" href="https://drive.google.com/file/d/1AfnqtKHrAko7YDGQRk9yOuyXghv6678u/view?usp=sharing" target="_blank" rel="noopener noreferrer">RESUME ↗</a></li>
         </ul>
       </div>
       <hr class="rule rule--strong">
       <div class="contact__meta mono mono--10">
         <p>© 2026 MIA HSIEH</p>
-        <p class="contact__meta-note">PERSONAL PORTFOLIO / UI &amp; UX DESIGN</p>
+        <p class="contact__meta-note" lang="zh-Hant">個人作品集／UI/UX 設計與產品思考</p>
       </div>
     </div>
   </footer>
