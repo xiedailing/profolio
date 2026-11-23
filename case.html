@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-WN36JB98");
+</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TROVA. — UX Case Study | Mia Hsieh</title>
+<meta name="description" content="TROVA. 智慧旅行規劃整合平台:從使用者研究、問題定義到 AI 行程檢查與優化的 UX/UI 案例研究。" />
+<meta property="og:title" content="TROVA. — UX Case Study | Mia Hsieh" />
+<meta property="og:description" content="從收集景點，到排出可執行的行程。" />
+<meta property="og:type" content="article" />
+<meta name="theme-color" content="#f2f0e9" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="base.css" />
+<style>
+  .case-hero { padding: 56px 0 112px; }
+  .back { display: inline-block; font-weight: 500; text-decoration: none; padding: 4px 0; margin-bottom: 28px; }
+  .back:hover { text-decoration: underline; }
+  .case-hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .case-hero__copy { background: var(--paper); box-shadow: 0 0 28px 28px var(--paper); position: relative; }
+  .case-hero h1 { font-size: clamp(52px, 7vw, 88px); line-height: 1.1; letter-spacing: .02em; }
+  .case-hero .lead { font-family: var(--serif); font-weight: 700; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.5; margin: 20px 0 14px; }
+  .case-hero .sum { font-size: 18px; font-weight: 500; max-width: 28em; }
+  .tags { justify-content: flex-start; margin-top: 18px; }
+  .hero-photo { border-radius: 24px; overflow: hidden; border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); aspect-ratio: 4 / 3; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-stickers { display: grid; gap: 44px; padding: 20px 0 20px 24px; max-width: 480px; justify-self: center; width: 100%; }
+  .hero-stickers .sticker { padding: 46px 30px 32px; }
+  .hero-stickers .sticker small { font-size: 16px; margin-bottom: 4px; }
+  .hero-stickers .sticker span { font-size: 26px; line-height: 1.5; }
+  .hero-stickers .sticker::before { width: 124px; height: 36px; margin-left: -62px; top: -17px; }
+  .hero-stickers .sticker:nth-child(1) { --tape: #9fb6ea; transform: rotate(-1.6deg); }
+  .hero-stickers .sticker:nth-child(2) { --tape: #ecd27a; transform: rotate(1.2deg); margin-left: 28px; }
+  .s { display: block; }
+  .logo { line-height: 0; margin-left: -14px; }
+  .logo img { width: clamp(220px, 24vw, 300px); height: auto; display: block; }
+  .label { display: inline-flex; align-items: center; gap: 8px; padding: 3px 16px 3px 12px; margin-bottom: 18px; background: var(--sand); border-radius: 999px; font-weight: 700; font-size: 15px; }
+  .label::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }
+  .split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  .factors__title { font-family: var(--serif); font-weight: 700; font-size: 20px; margin-bottom: 26px; }
+  .factors__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 22px; }
+  .factor { position: relative; background: #fbf4ea; border-radius: 3px; padding: 30px 18px 18px; font-family: var(--serif); font-weight: 700; font-size: 22px; text-align: center; box-shadow: 0 1px 1px rgba(0,0,0,.08), 0 10px 16px -8px rgba(60,40,20,.35); }
+  .factor::before { content: ""; position: absolute; top: -13px; left: 50%; width: 80px; height: 26px; margin-left: -40px; background: var(--tape); opacity: .88; transform: rotate(-3deg); clip-path: polygon(0 0, 4% 20%, 0 40%, 4% 60%, 0 80%, 4% 100%, 100% 100%, 96% 80%, 100% 60%, 96% 40%, 100% 20%, 96% 0); }
+  .factor:nth-child(1) { --tape: #9fb6ea; transform: rotate(-1.5deg); }
+  .factor:nth-child(2) { --tape: #ecd27a; transform: rotate(1.2deg); }
+  .factor:nth-child(3) { --tape: #9ed3b0; transform: rotate(1deg); }
+  .factor:nth-child(4) { --tape: #f2a9bd; transform: rotate(-1.2deg); }
+  .pin--tr { left: auto; right: 24px; top: -40px; margin-left: 0; --r: 25deg; }
+  @media (max-width: 920px) { .split { grid-template-columns: minmax(0, 1fr); } }
+  .split > *, .case-hero__grid > *, .compare > * { min-width: 0; }
+
+  .block { padding: 96px 0 112px; }
+  .block h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.4; max-width: 18em; }
+  .block .intro { margin-top: 18px; max-width: 42em; font-size: 18px; }
+  .block .intro .s + .s { margin-top: 6px; }
+  .nb2 { display: inline-block; }
+  .block strong { font-weight: 700; background: linear-gradient(transparent 58%, #ffeb7d 58%); }
+  .group-title { font-family: var(--serif); font-weight: 700; font-size: 22px; margin: 64px 0 20px; }
+
+  /* pinned notes */
+  .notes { display: grid; gap: 40px 32px; margin-top: 64px; }
+  .notes--2 { grid-template-columns: repeat(2, 1fr); }
+  .notes--3 { grid-template-columns: repeat(3, 1fr); }
+  .pn { position: relative; padding: 34px 26px 26px; border-radius: 6px; background: #cfe0f7; box-shadow: 2px 6px 12px rgba(40, 30, 20, .22); }
+  .pn--yellow { background: #fdf0b3; }
+  .pn--sky { background: #e2f1fa; }
+  .pn:nth-child(odd) { transform: rotate(-.8deg); }
+  .pn:nth-child(even) { transform: rotate(.8deg); }
+  .pn small { display: block; font-size: 15px; color: #4d4338; font-weight: 500; }
+  .pn h3 { font-size: 24px; line-height: 1.4; margin: 4px 0 10px; }
+  .pn p { font-size: 17px; color: #3a332d; }
+  .pn .path { margin-top: 12px; display: inline-block; padding: 2px 12px; background: rgba(255,255,255,.7); border-radius: 999px; font-size: 14px; font-weight: 500; }
+
+  /* stacked takeaway */
+  .takeaway { position: relative; margin-top: 64px; }
+  .takeaway::before { content: ""; position: absolute; inset: 0; background: #f8c8d4; border-radius: 6px; transform: rotate(2.2deg) translate(8px, 6px); box-shadow: 2px 6px 12px rgba(40,30,20,.18); }
+  .takeaway__paper { position: relative; background: #fffdf8; border-radius: 6px; padding: 34px 36px 32px 64px; box-shadow: 2px 6px 12px rgba(40,30,20,.2); transform: rotate(-.6deg);
+    background-image: radial-gradient(circle at 26px 50%, #e5e5e0 0 8px, transparent 9px); background-size: 52px 36px; background-repeat: repeat-y; }
+  .takeaway small { font-weight: 700; font-size: 15px; color: var(--muted); }
+  .takeaway p.big { font-family: var(--serif); font-weight: 700; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.6; margin-top: 6px; }
+
+  /* compare notebook cards */
+  .compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-top: 64px; }
+  .nb { position: relative; background: #fffdf8; border-radius: 6px; padding: 28px 28px 26px 64px; box-shadow: 2px 6px 12px rgba(40,30,20,.2);
+    background-image: radial-gradient(circle at 26px calc(50% - 26px), #dcdcd6 0 8px, transparent 9px), radial-gradient(circle at 26px 50%, #dcdcd6 0 8px, transparent 9px), radial-gradient(circle at 26px calc(50% + 26px), #dcdcd6 0 8px, transparent 9px); background-repeat: no-repeat; }
+  .nb--early { background-color: #d9efe0; box-shadow: 2px 6px 12px rgba(40,30,20,.14); }
+  .nb--final { box-shadow: 3px 10px 20px rgba(40,30,20,.3); }
+  .nb small { font-weight: 700; font-size: 15px; color: var(--muted); }
+  .nb h3 { font-size: 26px; line-height: 1.4; margin: 4px 0 8px; }
+  .nb p { font-size: 17px; }
+  .compare__arrow { font-size: 32px; font-weight: 700; }
+
+  /* stages */
+  .stage { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: center; margin-top: 56px; }
+  .stage--rev { grid-template-columns: 1fr 300px; }
+  .stage--rev .phone { order: 2; }
+  .phone { border: 9px solid var(--ink); border-radius: 44px; overflow: hidden; background: #000; box-shadow: 8px 10px 0 rgba(43,38,34,.18); }
+  .phone img { display: block; width: 100%; height: auto; }
+  .stage h3 { font-size: 30px; line-height: 1.4; }
+  .stage > div > p { margin-top: 12px; font-size: 18px; max-width: 30em; }
+  .tape-note { position: relative; margin-top: 28px; max-width: 30em; background: #fbf4ea; border-radius: 3px; padding: 30px 22px 20px; box-shadow: 0 1px 1px rgba(0,0,0,.08), 0 10px 16px -8px rgba(60,40,20,.35); transform: rotate(-.8deg); font-size: 17px; }
+  .tape-note::before { content: ""; position: absolute; top: -14px; left: 28px; width: 96px; height: 30px; background: #ecd27a; opacity: .88; transform: rotate(-3deg); clip-path: polygon(0 0, 3% 18%, 0 38%, 3% 58%, 0 78%, 3% 100%, 100% 100%, 97% 80%, 100% 60%, 97% 40%, 100% 20%, 97% 0); }
+  .tape-note b { font-weight: 700; }
+
+  .letter { display: inline-grid; place-items: center; width: 40px; height: 40px; margin-right: 12px; border-radius: 50%; background: var(--ink); color: #fffaf0; font-family: var(--sans); font-size: 20px; font-weight: 700; vertical-align: 2px; }
+  .zoom-label { margin-top: 28px !important; font-weight: 700; font-size: 15px !important; color: var(--muted); }
+  .aicard { position: relative; margin-top: 10px; max-width: 30em; padding: 24px 22px 20px; background: #fffdf8; border-radius: 18px; box-shadow: 3px 10px 20px -6px rgba(40,30,20,.3); transform: rotate(.8deg); }
+  .aicard__head { display: flex; gap: 14px; align-items: flex-start; }
+  .aicard__icon { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #cfe0f7; }
+  .aicard__title { font-weight: 700; font-size: 18px; line-height: 1.5; }
+  .aicard__body { margin-top: 6px; font-size: 16px; line-height: 1.8; color: #4d4338; }
+  .aicard__actions { display: flex; align-items: center; justify-content: flex-end; gap: 18px; margin-top: 18px; padding-top: 16px; border-top: 1px solid #e6e1d6; font-size: 16px; font-weight: 500; }
+  .aicard__primary { padding: 6px 18px; background: var(--ink); color: #fffaf0; border-radius: 999px; font-weight: 700; }
+  .stage > div > .aicard + .tape-note { margin-top: 36px; }
+  .stage { margin-top: 72px; }
+
+
+  .pn--sky h3 { font-size: 32px; }
+  .illus img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+  .illus-ph { min-height: 340px; border: 2px dashed #b9b9b3; border-radius: 24px; display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 16px; line-height: 1.8; }
+  .phone-col { margin: 0; max-width: 300px; }
+  .phone-col figcaption { margin-top: 14px; text-align: center; font-size: 14px; color: var(--muted); }
+  .stage--rev .phone-col { order: 2; justify-self: end; }
+  .phone-btn { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+  .phone-btn:hover img { filter: brightness(.96); }
+  .hl { position: absolute; left: 2.97%; top: 67.1%; width: 94.06%; height: 18.97%; border: 3px solid #f08cb4; border-radius: 14px; box-shadow: 0 0 0 2px #fff; pointer-events: none; }
+  .zoom-dot { display: inline-block; width: 12px; height: 12px; margin-right: 8px; border-radius: 3px; background: #f08cb4; }
+  .aicard { border: 3px solid #f08cb4; }
+  .block h2, .block .intro, .group-title, .stage > div > h3, .stage > div > p, .reflect h3, .reflect p { background: var(--paper); box-shadow: 0 0 16px 14px var(--paper); }
+  .lb { border: 0; padding: 24px; background: transparent; width: 100%; height: 100%; max-width: 100%; max-height: 100%; cursor: zoom-out; }
+  .lb[open] { display: grid; place-items: center; }
+  .lb::backdrop { background: rgba(30, 25, 20, .85); }
+  .lb img { display: block; max-height: calc(100vh - 48px); max-width: 100%; width: auto; border-radius: 36px; }
+  .lb__close { position: fixed; top: 20px; right: 24px; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--ink); background: #fffaf0; font-size: 20px; cursor: pointer; }
+  @media (max-width: 920px) { .stage--rev .phone-col { order: 0; justify-self: start; } }
+
+
+  .stage { position: relative; }
+  .connector { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 3; }
+  .detail { position: relative; margin-top: 40px; max-width: 36em; padding: 28px 22px 22px; background: #fffdf8; border-radius: 24px; box-shadow: 3px 10px 24px -6px rgba(40,30,20,.3); transform: rotate(.5deg); }
+  .detail__text { font-size: 17px; margin-bottom: 14px; }
+  .detail__inner { padding: 14px; background: #fde6ee; border-radius: 16px; }
+  .detail__label { margin-bottom: 10px; font-size: 14px; font-weight: 700; color: #8a4b62; }
+  .crop { overflow: hidden; border-radius: 12px; aspect-ratio: 739 / 323; background: #fff; border: 2px solid #f08cb4; }
+  .crop img { display: block; width: 106.31%; margin-left: -3.157%; margin-top: -154.65%; max-width: none; }
+  @media (max-width: 920px) { .connector { display: none; } }
+
+  .hl { border-color: var(--hc, #f08cb4); }
+  .crop { border-color: var(--hc, #f08cb4); }
+  .detail__inner { background: var(--hbg, #fde6ee); }
+  .detail__label { color: var(--hlt, #8a4b62); }
+  .connector .line { stroke: var(--hc, #f08cb4); }
+  .stage { margin-top: 120px; }
+  .intro + .stage { margin-top: 64px; }
+
+  @media (min-width: 921px) {
+    .stage { grid-template-columns: 300px minmax(0, 540px); justify-content: center; gap: 64px; }
+    .stage--rev { grid-template-columns: minmax(0, 540px) 300px; }
+    .stage .detail { max-width: 100%; }
+    .stage--rev .phone-col { justify-self: stretch; }
+  }
+
+  .star { position: absolute; z-index: 4; pointer-events: none; height: auto; filter: drop-shadow(2px 5px 4px rgba(40, 30, 20, .25)); }
+  .star--pink { width: 132px; bottom: -62px; right: -58px; transform: rotate(8deg); }
+  .star--yellow { width: 180px; bottom: -82px; right: -76px; transform: rotate(-6deg); }
+  @media (max-width: 1100px) { .star--pink { width: 72px; bottom: -30px; right: 8px; } .star--yellow { width: 80px; bottom: -34px; right: 8px; } }
+
+  .pn .evidence { margin: 14px 0 4px; padding: 10px 14px; background: rgba(255, 255, 255, .65); border-radius: 12px; font-size: 16px; font-weight: 500; color: var(--ink); }
+  .pn .path { margin-top: 12px; }
+
+  .intro b { font-weight: 700; }
+  .pn .stat { position: absolute; top: 12px; right: 24px; font-family: var(--sans); font-weight: 700; font-size: 72px; line-height: 1; letter-spacing: -.02em; color: #5b8ab0; pointer-events: none; }
+  @media (min-width: 921px) { .block .intro--one { max-width: none; } .intro--one .nb2 { white-space: nowrap; } .intro--one { white-space: nowrap; } }
+
+  /* results + reflection */
+  .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 64px; }
+  .reflect { margin-top: 36px; border-top: 1.5px solid var(--ink); }
+  .reflect > div { display: grid; grid-template-columns: 260px 1fr; gap: 32px; padding: 26px 0; border-bottom: 1px solid #cfcfca; }
+  .reflect h3 { font-size: 24px; line-height: 1.4; }
+  .reflect p { font-size: 18px; max-width: 34em; }
+
+  .next { display: block; text-decoration: none; margin: 0 0 72px; padding: 36px 40px; background: #cfe0f7; border: 1.5px solid var(--ink); border-radius: 24px; box-shadow: 6px 6px 0 var(--ink); transition: transform .12s, box-shadow .12s; }
+  .next:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--ink); }
+  .next small { font-weight: 700; font-size: 15px; }
+  .next h3 { font-size: 36px; margin: 4px 0; }
+
+  @media (max-width: 520px) { .block { padding: 64px 0 80px; } .case-hero { padding-bottom: 80px; } .stage { margin-top: 80px; } }
+  @media (max-width: 920px) {
+    .case-hero__grid, .compare { grid-template-columns: 1fr; }
+    .notes--2, .notes--3 { grid-template-columns: 1fr; }
+    .stage, .stage--rev { grid-template-columns: 1fr; gap: 32px; }
+    .stage--rev .phone { order: 0; }
+    .phone { max-width: 300px; }
+    .reflect > div { grid-template-columns: 1fr; gap: 8px; }
+    .compare__arrow { transform: rotate(90deg); justify-self: center; }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN36JB98" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#fff" stop-opacity=".3" />
+        <stop offset=".5" stop-color="#fff" stop-opacity="0" />
+        <stop offset="1" stop-color="#000" stop-opacity=".3" />
+      </linearGradient>
+      <symbol id="pin" viewBox="0 0 60 84">
+        <ellipse cx="30" cy="52" rx="23" ry="21" fill="currentColor" />
+        <ellipse cx="30" cy="52" rx="23" ry="21" fill="url(#shade)" />
+        <path d="M19 44 L21 24 H39 L41 44Z" fill="currentColor" />
+        <path d="M19 44 L21 24 H39 L41 44Z" fill="url(#shade)" />
+        <path d="M5 20 a25 10 0 0 0 50 0 v5 a25 10 0 0 1 -50 0Z" fill="currentColor" />
+        <path d="M5 20 a25 10 0 0 0 50 0 v5 a25 10 0 0 1 -50 0Z" fill="#000" opacity=".22" />
+        <ellipse cx="30" cy="20" rx="25" ry="10" fill="currentColor" />
+        <ellipse cx="30" cy="18" rx="19" ry="6" fill="#fff" opacity=".3" />
+        <ellipse cx="16" cy="52" rx="4" ry="10" fill="#fff" opacity=".55" transform="rotate(12 16 52)" />
+        <ellipse cx="43" cy="63" rx="9" ry="6" fill="#000" opacity=".1" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <nav class="nav" aria-label="主選單">
+    <div class="nav__pill">
+      <a href="index.html">首頁</a>
+      <a href="index.html#work" aria-current="page">作品</a>
+      <a href="#contact">聯絡</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- Hero -->
+    <section class="case-hero">
+      <a class="back" href="index.html#work">← 回到作品</a>
+      <div class="case-hero__grid">
+        <div class="case-hero__copy">
+          <h1 class="logo"><img src="assets/trova/trova_logo.svg" alt="TROVA" width="270" height="91" /></h1>
+          <p class="lead">從收集景點，<br />到排出可執行的行程。</p>
+          <p class="sum">透過 AI 協助檢查旅行行程的合理性，並提供優化建議，讓旅程規劃更順暢。</p>
+          <div class="tags"><span>使用者研究</span><span>資訊架構</span><span>UI 設計</span></div>
+        </div>
+        <div class="hero-stickers">
+          <div class="sticker"><small>我的角色</small><span><span class="nb2">獨立 UI/UX 設計</span><span class="nb2">與前端開發</span></span></div>
+          <div class="sticker"><small>專案類別</small><span><span class="nb2" style="display:block">UX 案例研究</span><span class="nb2" style="display:block">AI 旅遊規劃平台</span></span></div>
+        </div>
+      </div>
+      <nav class="toc" aria-label="本頁章節"><p class="toc__title">本頁內容</p><ul><li><a href="#problem">問題</a></li><li><a href="#findings">發現</a></li><li><a href="#direction">設計方向</a></li><li><a href="#solution">核心解法</a></li><li><a href="#outcome">成果</a></li><li><a href="#reflection">反思</a></li></ul></nav>
+    </section>
+
+    <!-- 問題 -->
+    <section class="block" id="problem">
+     <div class="split">
+      <div>
+      <span class="label">問題</span>
+      <h2>找到景點很容易，讓它們排得合理才困難。</h2>
+      <p class="intro"><span class="s"><span class="nb2">旅遊規劃不只是收集感興趣的景點，</span><span class="nb2">還需要考慮<strong>時間、交通距離、預算與行程順序</strong>。</span></span><span class="s"><span class="nb2">當安排不符合實際條件時，</span><span class="nb2">使用者往往需要反覆調整，增加規劃負擔。</span></span></p>
+      </div>
+      <div class="illus"><img src="assets/thinking.png" width="1254" height="1254" alt="一個人低頭思考，頭上的思考泡泡裡有時間、交通、預算與順序四個圖示" /></div>
+     </div>
+    </section>
+
+    <!-- 研究 -->
+    <section class="block" id="findings">
+      <span class="label">發現</span>
+      <h2>挑戰從收藏之後才開始。</h2>
+      <p class="intro intro--one"><span class="nb2">我設計了 11 題的開放式問卷，</span><span class="nb2">請 <b>7 位</b>有自主規劃旅行經驗的人書面回答，</span><span class="nb2">再用親和圖整理他們的回答。</span></p>
+
+      <div class="notes notes--2">
+        <article class="pn pn--sky">
+          <span class="stat" aria-hidden="true">6/7</span>
+          <small>發現一・7 位中有 6 位</small>
+          <h3>資訊分散</h3>
+          <p><span class="nb2">收藏散在截圖、地圖清單或對話紀錄裡，</span><span class="nb2">排行程時要重新翻找一次。</span></p>
+          <span class="path">收藏 → 整理</span>
+        </article>
+        <article class="pn pn--sky">
+          <span class="stat" aria-hidden="true">5/7</span>
+          <small>發現二・7 位中有 5 位</small>
+          <h3>規劃複雜</h3>
+          <p><span class="nb2">最花時間的不是找景點，</span><span class="nb2">而是排行程路線，</span><span class="nb2">要反覆評估交通、距離與時間。</span></p>
+          <span class="path">規劃 → 可行性</span>
+        </article>
+      </div>
+
+      <div class="takeaway">
+        <img class="pin" src="assets/icons/pin-yellow.png" alt="" aria-hidden="true" style="top:-34px; left:48px" />
+        <img class="star star--yellow" src="assets/icons/star-yellow.png" alt="" aria-hidden="true" />
+        <div class="takeaway__paper">
+          <small>重點結論</small>
+          <p class="big">不只要整合收藏資訊，更要<strong>協助使用者評估行程的可行性</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 設計方向 -->
+    <section class="block" id="direction">
+      <span class="label">設計方向</span>
+      <h2>從保留彈性，到更聰明的行程判斷。</h2>
+      <p class="intro"><span class="s">我注意到使用者放棄景點不一定代表失去興趣，因此先探索候補機制。</span><span class="s">隨著問題定義逐漸明確，我把設計重心收斂到<strong>行程合理性檢查與 AI 優化建議</strong>。</span></p>
+
+      <div class="compare">
+        <article class="nb nb--early">
+          <small>早期探索</small>
+          <h3>保留旅行選擇</h3>
+          <p>候補機制僅作為初期探索，未納入最終 Prototype。</p>
+        </article>
+        <div class="compare__arrow" aria-hidden="true">→</div>
+        <article class="nb nb--final">
+          <img class="star star--pink" src="assets/icons/star-pink.png" alt="" aria-hidden="true" />
+          <small>最終方向</small>
+          <h3>支援行程判斷</h3>
+          <p>AI 行程檢查與優化，是目前 Prototype 的核心。</p>
+        </article>
+      </div>
+
+      <h3 class="group-title">三個設計原則</h3>
+      <div class="notes notes--3" style="margin-top:28px">
+        <article class="pn pn--yellow">
+          <img class="pin pin--tr" src="assets/icons/pin-light-blue.png" alt="" aria-hidden="true" />
+          <h3>發現問題</h3>
+          <p>協助使用者發現潛在規劃問題。</p>
+        </article>
+        <article class="pn pn--yellow">
+          <img class="pin pin--tr" src="assets/icons/pin-light-blue.png" alt="" aria-hidden="true" />
+          <h3>解釋建議</h3>
+          <p>讓調整建議容易理解。</p>
+        </article>
+        <article class="pn pn--yellow">
+          <img class="pin pin--tr" src="assets/icons/pin-light-blue.png" alt="" aria-hidden="true" />
+          <h3>支援判斷</h3>
+          <p>協助使用者判斷是否調整行程。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 核心解法 -->
+    <section class="block" id="solution">
+      <span class="label">核心解法</span>
+      <h2>讓複雜的旅行計畫更容易檢視。</h2>
+      <p class="intro">從匯入收藏開始，到辨識行程中的潛在問題，再透過具體建議重新評估行程。</p>
+
+                  <div class="stage stage--rev" id="stageA" style="--hc:#6f8fe0;--hbg:#e3ecfb;--hlt:#3f5fb0">
+        <svg class="connector" aria-hidden="true"><path class="line" d="" fill="none" stroke-width="3" stroke-dasharray="8 8" stroke-linecap="round"/></svg>
+        <figure class="phone-col">
+          <div class="phone"><button class="phone-btn" type="button" data-zoom aria-label="放大查看 1 匯入收藏畫面"><img src="assets/trova-new/import-ai-recognized.png" alt="TROVA 匯入景點畫面：已從一則 Instagram Reels 辨識出錦市場與八坂神社兩個景點" /><span class="hl" style="left:5.09%;top:48.36%;width:90.08%;height:39.08%" aria-hidden="true"></span></button></div>
+          <figcaption>點擊畫面放大</figcaption>
+        </figure>
+        <div>
+          <h3><span class="letter">1</span>匯入收藏</h3>
+          <p><span class="nb2">使用者貼上社群貼文的連結，</span><span class="nb2">AI 辨識貼文中提到的景點，</span><span class="nb2">直接收藏，不用再手動輸入。</span></p>
+          <div class="detail">
+            <img class="pin pin--tr" src="assets/icons/pin-light-blue.png" alt="" aria-hidden="true" />
+            <p class="detail__text"><b>畫面重點：</b><span class="nb2">AI 從連結辨識出 2 個景點，</span><span class="nb2">標示來源，使用者確認後一次收藏。</span></p>
+            <div class="detail__inner">
+              <p class="detail__label">細節放大</p>
+              <div class="crop" style="aspect-ratio:354.0 / 333.0"><img style="width:111.02%;margin-left:-5.650%;margin-top:-116.38%" src="assets/trova-new/import-ai-recognized.png" alt="辨識結果局部放大：來源為 Instagram Reels，辨識出錦市場與八坂神社，可勾選收藏" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage" id="stageB" style="--hc:#f08cb4;--hbg:#fde6ee;--hlt:#8a4b62">
+        <svg class="connector" aria-hidden="true"><path class="line" d="" fill="none" stroke-width="3" stroke-dasharray="8 8" stroke-linecap="round"/></svg>
+        <figure class="phone-col">
+          <div class="phone"><button class="phone-btn" type="button" data-zoom aria-label="放大查看 2 AI 檢查畫面"><img src="assets/trova-new/ai-check.png" alt="TROVA AI 提醒展開後的行程畫面" /><span class="hl" style="left:4.12%;top:67.65%;width:91.77%;height:17.85%" aria-hidden="true"></span></button></div>
+          <figcaption>點擊畫面放大</figcaption>
+        </figure>
+        <div>
+          <h3><span class="letter">2</span>AI 檢查</h3>
+          <p><span class="nb2">當行程出現潛在的交通或時間衝突時，</span><span class="nb2">系統提供提醒與具體建議，</span><span class="nb2">協助使用者理解問題並評估調整方式。</span></p>
+          <div class="detail">
+            <img class="pin pin--tr" src="assets/icons/pin-pink.png" alt="" aria-hidden="true" />
+            <p class="detail__text"><b>畫面重點：</b><span class="nb2">提醒說明前一站的結束時間與交通時間，</span><span class="nb2">並提供兩個調整選項。</span></p>
+            <div class="detail__inner">
+              <p class="detail__label">細節放大</p>
+              <div class="crop" style="aspect-ratio:360.6 / 152.1"><img style="width:108.97%;margin-left:-4.486%;margin-top:-159.82%" src="assets/trova-new/ai-check.png" alt="AI 提醒卡片局部放大：交通時間可能來不及，可選擇清水寺順延至 10:20 或維持原安排" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage stage--rev" id="stageC" style="--hc:#e8b630;--hbg:#fdf1c8;--hlt:#7a5c08">
+        <svg class="connector" aria-hidden="true"><path class="line" d="" fill="none" stroke-width="3" stroke-dasharray="8 8" stroke-linecap="round"/></svg>
+        <figure class="phone-col">
+          <div class="phone"><button class="phone-btn" type="button" data-zoom aria-label="放大查看 3 AI 優化畫面"><img src="assets/trova-new/ai-optimize.png" alt="TROVA AI 建議順序畫面，可切換檢視 AI 建議順序與原始規劃" /><span class="hl" style="left:4.07%;top:43.90%;width:91.86%;height:24.18%" aria-hidden="true"></span></button></div>
+          <figcaption>點擊畫面放大</figcaption>
+        </figure>
+        <div>
+          <h3><span class="letter">3</span>AI 優化</h3>
+          <p><span class="nb2">透過 AI 建議的景點安排順序，</span><span class="nb2">使用者可以檢視原始規劃與建議結果，</span><span class="nb2">重新評估行程動線與安排。</span><span class="nb2">套用後可以一鍵復原。</span></p>
+          <div class="detail">
+            <img class="pin pin--tr" src="assets/icons/pin-yellow.png" alt="" aria-hidden="true" />
+            <p class="detail__text"><b>畫面重點：</b><span class="nb2">AI 整理出順路動線，</span><span class="nb2">並讓使用者選擇「採用建議」或「按原始規劃」。</span></p>
+            <div class="detail__inner">
+              <p class="detail__label">細節放大</p>
+              <div class="crop" style="aspect-ratio:361.0 / 206.0"><img style="width:108.86%;margin-left:-4.432%;margin-top:-103.60%" src="assets/trova-new/ai-optimize.png" alt="AI 建議卡片局部放大：已整理 Day 2 順路動線，可選擇按原始規劃或採用建議" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成果 -->
+    <section class="block" id="outcome">
+      <span class="label">成果</span>
+      <h2>親自體驗看看。</h2>
+      <p class="intro">TROVA 已完成 AI 行程檢查與優化的互動原型，並製作可公開瀏覽的 Landing Page。</p>
+      <div class="links">
+        <a class="btn btn--dark" href="https://www.figma.com/proto/zibVaGD0nePHsRTbO8X9bo/%E6%99%BA%E6%85%A7%E6%97%85%E8%A1%8C%E8%A6%8F%E5%8A%83%E6%95%B4%E5%90%88%E5%B9%B3%E5%8F%B0%E5%B0%88%E6%A1%88_Wireframe?node-id=1468-12139&viewport=-724%2C44%2C0.04&t=xKtSwDGTD8Vghwhe-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1468%3A12139&show-proto-sidebar=1&page-id=1446%3A8995" target="_blank" rel="noopener noreferrer">查看互動原型 ↗</a>
+        <a class="btn" href="https://xiedailing.github.io/Travel-AI/trova_landing_page/" target="_blank" rel="noopener noreferrer">前往介紹網站 ↗</a>
+      </div>
+    </section>
+
+    <!-- 反思 -->
+    <section class="block" id="reflection">
+      <span class="label">反思</span>
+      <h2>我學到的事。</h2>
+      <div class="reflect">
+        <div><h3>以研究為本的思考</h3><p>研究讓我重新理解旅行規劃的問題，除了探索景點，更需要<strong>協助使用者衡量現實條件</strong>。</p></div>
+        <div><h3>與 AI 一起設計</h3><p>AI 的價值不只是提供答案，也在於<strong>協助使用者理解行程中的問題</strong>，進一步做出判斷。</p></div>
+        <div><h3>後續步驟</h3><p>未來希望透過<strong>易用性測試</strong>，確認使用者能否理解 AI 的問題提示、優化理由，以及是否能順利完成行程調整。</p></div>
+      </div>
+    </section>
+
+    <a class="next" href="bubu.html">
+      <small>下一個專案</small>
+      <h3>補補 居家消耗品補貨 App</h3>
+      <p>從察覺補貨需求到完成購買，減少生活中的遺漏與重複溝通。</p>
+    </a>
+  </main>
+
+  <footer class="foot" id="contact">
+    <div class="wrap">
+      <div class="foot__row">
+        <div>
+          <h2>一起聊聊吧。</h2>
+          <p>歡迎聊聊設計、產品相關的工作機會或合作。</p>
+        </div>
+        <div class="foot__links">
+          <a class="btn" href="mailto:xiedailing0324@gmail.com">寄信給我</a>
+          <a class="btn" href="https://github.com/xiedailing">GitHub</a>
+          <a class="btn" href="https://drive.google.com/file/d/1AfnqtKHrAko7YDGQRk9yOuyXghv6678u/view?usp=sharing" target="_blank" rel="noopener noreferrer">下載履歷 ↗</a>
+        </div>
+      </div>
+      <p class="foot__copy">© 2026 Mia Hsieh</p>
+    </div>
+  </footer>
+<dialog id="lb" class="lb" aria-label="放大畫面"><button class="lb__close" type="button" aria-label="關閉">✕</button><img alt="" /></dialog>
+<script>
+  const lb = document.getElementById("lb"), lbImg = lb.querySelector("img");
+  document.querySelectorAll("[data-zoom]").forEach((b) => b.addEventListener("click", () => { const i = b.querySelector("img"); lbImg.src = i.src; lbImg.alt = i.alt; lb.showModal(); }));
+  lb.addEventListener("click", () => lb.close());
+</script>
+<script>
+  function drawConnectors() {
+    document.querySelectorAll(".stage").forEach((s) => {
+      const svg = s.querySelector(".connector"); if (!svg) return;
+      const p = svg.querySelector(".line");
+      if (getComputedStyle(svg).display === "none") return;
+      const hl = s.querySelector(".hl"), d = s.querySelector(".detail");
+      const sr = s.getBoundingClientRect(), a = hl.getBoundingClientRect(), b = d.getBoundingClientRect();
+      const detailLeft = b.left + b.width / 2 < a.left + a.width / 2;
+      const x1 = (detailLeft ? a.left - 6 : a.right + 6) - sr.left;
+      const x2 = (detailLeft ? b.right + 6 : b.left - 6) - sr.left;
+      const y1 = a.top + a.height / 2 - sr.top;
+      const y2 = Math.min(Math.max(a.top + a.height / 2, b.top + 40), b.bottom - 40) - sr.top;
+      p.setAttribute("d", "M" + x1 + " " + y1 + " L" + x2 + " " + y2);
+    });
+  }
+  window.addEventListener("load", drawConnectors); window.addEventListener("resize", drawConnectors);
+  document.fonts && document.fonts.ready.then(drawConnectors);
+</script>
+<nav class="rail" aria-label="章節導覽（固定）"><ul><li><a href="#problem">問題</a></li><li><a href="#findings">發現</a></li><li><a href="#direction">設計方向</a></li><li><a href="#solution">核心解法</a></li><li><a href="#outcome">成果</a></li><li><a href="#reflection">反思</a></li></ul></nav>
+<button class="totop" type="button" aria-label="回到頁首">↑</button>
+<script>
+(function(){var b=document.querySelector('.totop');
+function t(){b.classList.toggle('is-on',window.scrollY>window.innerHeight*0.8)}
+window.addEventListener('scroll',t,{passive:true});t();
+b.addEventListener('click',function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});var a=document.querySelector('.back');if(a)a.focus({preventScroll:true})});})();
+</script>
+<script>
+(function(){
+var toc=document.querySelector('.toc'),rail=document.querySelector('.rail');
+var links=[].slice.call(document.querySelectorAll('.toc a,.rail a'));
+var secs=[].slice.call(document.querySelectorAll('.toc a')).map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+function set(id){links.forEach(function(a){if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+function upd(){var line=innerHeight*0.35,cur='';secs.forEach(function(s){if(s.getBoundingClientRect().top<=line)cur=s.id});set(cur);
+rail.classList.toggle('is-on',toc.getBoundingClientRect().bottom<0)}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+</body>
+</html>

@@ -1,21 +1,18 @@
 # Mia Hsieh — Portfolio
 
-個人作品集網站。純 HTML / CSS,無 build 流程。設計稿來自 Figma。
+個人作品集網站。純 HTML / CSS,無 build 流程。
 
 ## 檔案結構
 
-- `index.html` — 首頁(Hero / About / Selected Work / Contact)
-- `trova.html` — TROVA. 案例頁(桌機 1440 + 手機 390 版型)
-- `bubu.html` — 補補 Bubu 案例頁(桌機 1440,平板/手機依 TROVA 版型推導)
-- `styles.css` — 共用樣式(設計 token 在最上方 `:root`)
-- `case.css` — 案例頁共用樣式(TROVA 與補補)
-- `bubu.css` — 補補案例頁專用樣式
-- `assets/` — 圖片;`assets/trova/`、`assets/bubu/` 是各案例頁素材
-- `vercel.json` — 啟用 clean URLs(`/trova.html` → `/trova`)
+- `index.html` — 首頁(Hero / 作品 / 聯絡),樣式內嵌
+- `case.html` — TROVA. 案例頁
+- `bubu.html` — 補補 Bubu 案例頁
+- `base.css` — 案例頁共用樣式(各頁專屬樣式內嵌於各自檔案)
+- `assets/` — 圖片;`assets/trova/`、`assets/trova-new/`、`assets/bubu/` 是各案例頁素材
+- `favicon.svg` — 網站圖示
+- `vercel.json` — 啟用 clean URLs(`/case.html` → `/case`),並把舊網址 `/trova` 轉址到 `/case`
 
 ## 本機預覽
-
-直接用瀏覽器開啟 `index.html`,或在資料夾內執行:
 
 ```bash
 npx serve .
@@ -23,4 +20,4 @@ npx serve .
 
 ## 部署
 
-連結到 Vercel 後,每次 push 到 `main` 會自動部署。
+連結 Vercel 後,推到 `redesign` 分支會產生預覽網址;合併到 `main` 才更新正式網站。

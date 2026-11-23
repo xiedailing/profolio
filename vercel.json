@@ -1,1 +1,7 @@
-{ "cleanUrls": true }
+{
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/trova", "destination": "/case", "permanent": true },
+    { "source": "/trova.html", "destination": "/case", "permanent": true }
+  ]
+}
